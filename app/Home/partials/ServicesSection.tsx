@@ -88,13 +88,13 @@ const ServicesSection: React.FC = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-[#FF3E41]" />
-            <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">What We Offer</span>
+            <div className="h-px w-8 bg-blue-700" />
+            <span className="text-blue-700 font-mono text-xs tracking-[0.3em] uppercase">What We Offer</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <h2 className="text-4xl md:text-5xl font-black text-[#060315] leading-tight max-w-xl">
-              Our Marine{" "}
-              <span className="text-[#FF3E41]">Services</span>
+              OUR {" "}
+              <span className="text-blue-700">SERVICES</span>
             </h2>
             <p className="text-gray-500 text-base max-w-md leading-relaxed">
               Comprehensive ship chandling and maritime services delivered across all major ports in Bangladesh — 24 hours a day, 7 days a week.
@@ -134,9 +134,6 @@ const ServicesSection: React.FC = () => {
 
               {/* Content */}
               <div className="p-5">
-                <div className="font-mono text-[9px] text-[#FF3E41]/60 tracking-widest mb-2 uppercase">
-                  SVC — {String(index + 1).padStart(2, "0")}
-                </div>
                 <h4 className="font-bold text-[#060315] text-sm leading-snug mb-2 group-hover:text-[#FF3E41] transition-colors">
                   {service.title}
                 </h4>

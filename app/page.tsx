@@ -59,12 +59,12 @@ export default function HomePage() {
 
       {/* 1. Hero Carousel — dark / full-bleed */}
       <HeroCarousel />
+      
+      {/* 3. Clients Banner — white, infinite marquee of shipping lines */}
+      <ClientsBanner />
 
       {/* 2. About — dark navy, stats + split layout */}
       <AboutModern />
-
-      {/* 3. Clients Banner — white, infinite marquee of shipping lines */}
-      <ClientsBanner />
 
       {/* 4. Services — white, 12-card grid */}
       <ServicesSection />

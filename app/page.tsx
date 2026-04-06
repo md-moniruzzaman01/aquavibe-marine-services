@@ -1,4 +1,16 @@
 import Image from "next/image";
+import HeroCarousel from "./Home/partials/HeroSlider";
+import ServicesGrid from "./Home/partials/ServicesGrid";
+import ProductsSection from "./Home/partials/ProductsSection";
+import ServicesSection from "./Home/partials/ServicesSection";
+import AboutModern from "./Home/partials/About";
+import Products from "./Home/partials/Products";
+import PortInfo from "./Home/partials/PartInfo";
+import WhyChooseUs from "./Home/partials/WhyChooseUs";
+import ContactSection from "./Home/partials/ContactUs";
+import TestimonialSection from "./Home/partials/Testimonial";
+
+
 
 // app/page.tsx  (add alongside your existing JSX)
 export default function HomePage() {
@@ -47,7 +59,23 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* your existing page content */}
+      <HeroCarousel/>
+      <AboutModern/>
+      <ServicesSection/>
+      <Products/>
+      <PortInfo/>
+      <WhyChooseUs/>
+      <ContactSection/>
+
+      <TestimonialSection/>
+      {/* <AboutSection/> */}
+      {/* <ServicesGrid/> */}
+      {/* <ProductsSection/> */}
+      
+
+
+      
     </>
   );
 }
+

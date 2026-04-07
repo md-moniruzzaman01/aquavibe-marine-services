@@ -1,43 +1,64 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const PRODUCTS = [
-  { label: "Marine Fender Supply",               href: "/marine-fender-supply" },
-  { label: "Ship Spare Parts",                   href: "/ship-crane-repair-and-crane-spare-parts-supply-services" },
-  { label: "Marine Lube Oil",                    href: "/marine-lube-oil" },
+  { label: "Marine Fender Supply", href: "/marine-fender-supply" },
+  { label: "Ship Spare Parts", href: "/ship-crane-repair-and-crane-spare-parts-supply-services" },
+  { label: "Marine Lube Oil", href: "/marine-lube-oil" },
   { label: "Physical Bunker And Lubricant Supply", href: "/bunker-supply" },
-  { label: "Ship Stores Supply",                 href: "/store-supply" },
-  { label: "Food Provisions Supply",             href: "/provision-supply" },
+  { label: "Ship Stores Supply", href: "/store-supply" },
+  { label: "Food Provisions Supply", href: "/provision-supply" },
 ];
 
 const NAV = [
-  { label: "HOME",           href: "/" },
-  { label: "ABOUT US",       href: "/about-us" },
-  { label: "PRODUCTS",       href: "#", children: PRODUCTS },
-  { label: "SERVICES",       href: "#", children: [{ label: "Ship Repair Services", href: "/ship-repairing-maintenance" }] },
-  { label: "SERVICE PORT",   href: "/service-port" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT US", href: "/about-us" },
+  { label: "PRODUCTS", href: "#", children: PRODUCTS },
+  {
+    label: "SERVICES",
+    href: "#",
+    children: [{ label: "Ship Repair Services", href: "/ship-repairing-maintenance" }],
+  },
+  { label: "SERVICE PORT", href: "/service-port" },
   { label: "MEDIA & EVENTS", href: "#" },
-  { label: "CONTACT US",     href: "/contact-us" },
+  { label: "CONTACT US", href: "/contact-us" },
 ];
 
 export default function Header() {
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDrop, setOpenDrop]     = useState<string | null>(null);
+  const [openDrop, setOpenDrop] = useState<string | null>(null);
+
+  // Prevent scroll
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "auto";
+  }, [mobileOpen]);
+
+  // 🔥 Smooth navigation handler (FIXED)
+  const handleNavigate = (href: string) => {
+    setMobileOpen(false);
+    setOpenDrop(null);
+
+    setTimeout(() => {
+      router.push(href); // ✅ no reload, smooth
+    }, 300); // match animation duration
+  };
 
   return (
     <header className="w-full">
-      {/* ── Logo row ── */}
+      {/* Logo */}
       <div className="border-b border-gray-200 bg-white">
         <div className="max-w-[1222px] mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/">
             <Image
               src="https://aquavibemarineservices.com/wp-content/uploads/2024/06/Untitled-design-1-min.png"
-              alt="Aquavibe Marine Services"
-              width={287} height={80}
-              className="h-16 w-auto object-contain"
-              priority
+              alt="logo"
+              width={287}
+              height={80}
+              className="h-16 w-auto"
             />
           </Link>
           <div className="hidden lg:block">
@@ -48,21 +69,19 @@ export default function Header() {
               className="h-16 w-auto object-contain"
             />
           </div>
-          {/* Mobile hamburger */}
+
           <button
-            className="lg:hidden text-[#004d95] font-bold text-sm font-pt-sans"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            className="lg:hidden text-[#004d95] font-bold"
+            onClick={() => setMobileOpen(true)}
           >
-            {mobileOpen ? "✕ Close" : "☰ Menu"}
+            ☰ Menu
           </button>
         </div>
       </div>
 
-      {/* ── Nav bar ── */}
-      <nav className="bg-[#004d95]" aria-label="Main navigation">
+            {/* ── Desktop Nav ── */}
+      <nav className="bg-[#004d95]">
         <div className="max-w-[1222px] mx-auto px-4">
-          {/* Desktop */}
           <ul className="hidden lg:flex items-center justify-center">
             {NAV.map((item) => (
               <li
@@ -73,18 +92,19 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-[18px] py-5 font-pt-sans font-bold text-[13px] uppercase tracking-wide text-white hover:bg-white/15 transition-colors"
+                  className="flex items-center gap-1 px-[18px] py-5 text-[13px] font-bold uppercase text-white hover:bg-white/15"
                 >
                   {item.label}
-                  {item.children && <span className="text-[10px] mt-0.5">▾</span>}
+                  {item.children && <span className="text-[10px]">▾</span>}
                 </Link>
+
                 {item.children && openDrop === item.label && (
-                  <div className="absolute top-full left-0 z-50 bg-white rounded-[10px] shadow-lg min-w-[260px] py-2">
+                  <div className="absolute top-full left-0 bg-white rounded shadow-lg min-w-[260px] py-2 z-50">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-5 py-2.5 font-pt-sans font-bold text-[12px] uppercase text-gray-700 border-b border-gray-100 last:border-0 hover:bg-gray-50 hover:text-[#004d95] transition-colors"
+                        className="block px-5 py-2 text-[12px] font-bold uppercase text-gray-700 hover:bg-gray-100 hover:text-[#004d95]"
                       >
                         {child.label}
                       </Link>
@@ -94,40 +114,96 @@ export default function Header() {
               </li>
             ))}
           </ul>
-
-          {/* Mobile */}
-          {mobileOpen && (
-            <ul className="lg:hidden flex flex-col py-2">
-              {NAV.map((item) => (
-                <li key={item.label}>
-                  <button
-                    className="w-full text-left px-4 py-3 font-pt-sans font-bold text-[13px] uppercase text-white hover:bg-white/15 flex justify-between"
-                    onClick={() => setOpenDrop(openDrop === item.label ? null : item.label)}
-                  >
-                    {item.label}
-                    {item.children && <span>{openDrop === item.label ? "▲" : "▼"}</span>}
-                  </button>
-                  {item.children && openDrop === item.label && (
-                    <ul className="bg-white/10">
-                      {item.children.map((child) => (
-                        <li key={child.href}>
-                          <Link
-                            href={child.href}
-                            className="block px-8 py-2.5 font-pt-sans text-[12px] uppercase text-white/90 hover:text-white"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       </nav>
+
+
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed inset-0 z-50 lg:hidden ${
+          mobileOpen ? "visible" : "invisible"
+        }`}
+      >
+        {/* Overlay */}
+        <div
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${
+            mobileOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setMobileOpen(false)}
+        />
+
+        {/* Drawer */}
+        <div
+          className={`absolute top-0 left-0 h-full w-[280px] bg-white transform transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            mobileOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="flex justify-between p-4 border-b">
+            <span className="font-bold">Menu</span>
+            <button onClick={() => setMobileOpen(false)}>✕</button>
+          </div>
+
+          <ul className="py-2">
+            {NAV.map((item, index) => (
+              <li
+                key={item.label}
+                className={`transition-all duration-300 ${
+                  mobileOpen
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-4"
+                }`}
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+                {/* MAIN CLICK */}
+                {!item.children ? (
+                  <button
+                    onClick={() => handleNavigate(item.href)}
+                    className="w-full text-left px-4 py-3 font-bold text-sm uppercase"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <button
+                    onClick={() =>
+                      setOpenDrop(
+                        openDrop === item.label ? null : item.label
+                      )
+                    }
+                    className="w-full text-left px-4 py-3 font-bold text-sm uppercase flex justify-between"
+                  >
+                    {item.label}
+                    <span>{openDrop === item.label ? "▲" : "▼"}</span>
+                  </button>
+                )}
+
+                {/* Dropdown */}
+                {item.children && (
+                  <ul
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openDrop === item.label
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="bg-gray-100">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <button
+                            onClick={() => handleNavigate(child.href)}
+                            className="block w-full text-left px-6 py-2 text-xs uppercase"
+                          >
+                            {child.label}
+                          </button>
+                        </li>
+                      ))}
+                    </div>
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </header>
   );
 }

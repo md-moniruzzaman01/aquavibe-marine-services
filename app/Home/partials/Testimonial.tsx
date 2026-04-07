@@ -67,7 +67,7 @@ export default function TestimonialSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative bg-[#060315] overflow-hidden py-24 lg:py-32" ref={ref}>
+    <section className="relative  overflow-hidden py-24 lg:py-32" ref={ref}>
       {/* Background */}
       <div
         className="absolute inset-0 opacity-[0.025]"
@@ -76,8 +76,8 @@ export default function TestimonialSection() {
           backgroundSize: "40px 40px",
         }}
       />
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#FF3E41]/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#51CFED]/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#004d95]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#004d95]/5 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
@@ -92,13 +92,13 @@ export default function TestimonialSection() {
             <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Testimonials</span>
             <div className="h-px w-8 bg-[#FF3E41]" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black  leading-tight">
             What Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3E41] to-[#51CFED]">
               Clients Say
             </span>
           </h2>
-          <p className="mt-4 text-white/50 text-base max-w-lg mx-auto leading-relaxed">
+          <p className="mt-4  text-base max-w-lg mx-auto leading-relaxed">
             Trusted by ship masters, fleet managers and maritime companies from around the world.
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ export default function TestimonialSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative bg-white/5 hover:bg-white/8 border border-white/10 hover:border-[#FF3E41]/30 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
+              className="group relative  hover:bg-white/8 border border-white/10 hover:border-[#FF3E41]/30 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
             >
               {/* Large quote icon bg */}
               <Quote className="absolute top-4 right-5 w-16 h-16 text-white/3 rotate-180" />
@@ -124,7 +124,7 @@ export default function TestimonialSection() {
               </div>
 
               {/* Quote */}
-              <p className="text-white/70 text-sm leading-relaxed italic mb-6">
+              <p className=" text-sm leading-relaxed italic mb-6">
                 "{item.quote}"
               </p>
 
@@ -132,16 +132,16 @@ export default function TestimonialSection() {
               <div className="flex items-center gap-4">
                 {/* Avatar with initials */}
                 <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#FF3E41] to-[#51CFED] flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-black text-xs">{item.initials}</span>
+                  <span className=" font-black text-xs">{item.initials}</span>
                 </div>
                 <div>
-                  <div className="font-bold text-white text-sm">{item.name}</div>
-                  <div className="font-mono text-[10px] text-white/40 tracking-wider">
+                  <div className="font-bold  text-sm">{item.name}</div>
+                  <div className="font-mono text-[10px]  tracking-wider">
                     {item.role} — {item.company}
                   </div>
                 </div>
                 <div className="ml-auto">
-                  <div className="text-right px-3 py-1 rounded-full bg-[#51CFED]/10 border border-[#51CFED]/20">
+                  <div className="text-right px-3 py-1 rounded-full bg-[#004d95]/10 border border-[#51CFED]/20">
                     <span className="font-mono text-[9px] text-[#51CFED] tracking-widest uppercase">{item.port}</span>
                   </div>
                 </div>
@@ -167,8 +167,8 @@ export default function TestimonialSection() {
             { value: "100%", label: "Satisfaction Rate" },
           ].map(({ value, label }) => (
             <div key={label} className="px-8 py-4 rounded-2xl bg-white/5 border border-white/10">
-              <div className="text-2xl font-black text-white mb-1">{value}</div>
-              <div className="font-mono text-[10px] text-white/40 tracking-widest uppercase">{label}</div>
+              <div className="text-2xl font-black  mb-1">{value}</div>
+              <div className="font-mono text-[10px]  tracking-widest uppercase">{label}</div>
             </div>
           ))}
         </motion.div>

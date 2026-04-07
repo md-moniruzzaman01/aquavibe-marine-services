@@ -59,7 +59,7 @@ export default function ContactSection() {
     <section id="contact" className="bg-white py-24 lg:py-32 relative overflow-hidden" ref={ref}>
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50/50 -z-0" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#FF3E41]/5 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#004d95]/5 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
@@ -74,7 +74,7 @@ export default function ContactSection() {
             <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Contact Us</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="text-4xl md:text-5xl font-black text-[#060315] leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-[#004d95] leading-tight">
               Get In{" "}
               <span className="text-[#FF3E41]">Touch</span>
             </h2>
@@ -95,15 +95,15 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group relative  border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               {/* Gradient bar at top */}
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${card.color}`} />
 
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 shadow-lg`}>
-                <card.icon className="w-5 h-5 text-white" />
+                <card.icon className="w-5 h-5 " />
               </div>
-              <div className="font-bold text-[#060315] text-sm mb-1">{card.title}</div>
+              <div className="font-bold text-[#004d95] text-sm mb-1">{card.title}</div>
               <div className="font-mono text-[10px] text-gray-400 tracking-wider mb-3 uppercase">{card.desc}</div>
               <div className="text-[#FF3E41] text-sm font-semibold group-hover:underline">{card.label}</div>
             </motion.a>
@@ -119,30 +119,30 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="lg:col-span-3"
           >
-            <div className="bg-[#060315] rounded-2xl p-8 border border-white/5 shadow-2xl">
+            <div className=" rounded-2xl p-8 border border-white/5 shadow-2xl">
               <div className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase mb-1">Send Message</div>
-              <h3 className="font-bold text-xl text-white mb-6">Request a Service</h3>
+              <h3 className="font-bold text-xl  mb-6">Request a Service</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="font-mono text-[10px] text-white/40 tracking-wider mb-1.5 block uppercase">Your Name *</label>
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Your Name *</label>
                     <input
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#FF3E41]/50 text-white text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-white/20"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50  text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="Full Name"
                     />
                   </div>
                   <div>
-                    <label className="font-mono text-[10px] text-white/40 tracking-wider mb-1.5 block uppercase">Email *</label>
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Email *</label>
                     <input
                       required
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#FF3E41]/50 text-white text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-white/20"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="email@example.com"
                     />
                   </div>
@@ -150,20 +150,20 @@ export default function ContactSection() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="font-mono text-[10px] text-white/40 tracking-wider mb-1.5 block uppercase">Phone Number</label>
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Phone Number</label>
                     <input
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#FF3E41]/50 text-white text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-white/20"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="+880..."
                     />
                   </div>
                   <div>
-                    <label className="font-mono text-[10px] text-white/40 tracking-wider mb-1.5 block uppercase">Arrival Port</label>
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Arrival Port</label>
                     <input
                       value={form.port}
                       onChange={(e) => setForm({ ...form, port: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#FF3E41]/50 text-white text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-white/20"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="Chittagong / Mongla / Payra"
                     />
                   </div>
@@ -174,20 +174,20 @@ export default function ContactSection() {
                   <textarea
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 focus:border-[#FF3E41]/50 text-white text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-white/20 min-h-[110px] resize-none"
+                    className="w-full bg-white/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20 min-h-[110px] resize-none"
                     placeholder="Describe your vessel requirements..."
                     maxLength={300}
                   />
-                  <div className="font-mono text-[9px] text-white/20 mt-1 text-right">{form.message.length} / 300</div>
+                  <div className="font-mono text-[9px] text-black/20 mt-1 text-right">{form.message.length} / 300</div>
                 </div>
 
                 <button
                   type="submit"
                   disabled={sending || sent}
-                  className="w-full py-4 bg-[#FF3E41] hover:bg-[#e63538] disabled:opacity-60 text-white font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-[#FF3E41]/25 flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-[#FF3E41] hover:bg-[#e63538] disabled:opacity-60 font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-[#FF3E41]/25 flex items-center justify-center gap-2"
                 >
                   {sending ? (
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <div className="w-4 h-4 border-2 border-black/30 border-t-white rounded-full animate-spin" />
                   ) : sent ? (
                     <>
                       <CheckCircle className="w-4 h-4" />
@@ -215,7 +215,7 @@ export default function ContactSection() {
             <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
               <div className="font-mono text-[10px] text-[#FF3E41] tracking-widest uppercase mb-4">Head Office</div>
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-10 h-10 rounded-xl bg-[#FF3E41]/10 border border-[#FF3E41]/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#004d95]/10 border border-[#004d95]/20 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4 text-[#FF3E41]" />
                 </div>
                 <div>
@@ -243,7 +243,7 @@ export default function ContactSection() {
             </div>
 
             {/* Hours */}
-            <div className="bg-[#060315] rounded-2xl p-6 border border-white/5">
+            <div className="bg-white rounded-2xl p-6 border border-white/5">
               <div className="flex items-center gap-2 mb-4">
                 <Clock className="w-4 h-4 text-[#51CFED]" />
                 <span className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase">Operating Hours</span>
@@ -258,11 +258,11 @@ export default function ContactSection() {
             </div>
 
             {/* Port coverage */}
-            <div className="border border-[#FF3E41]/20 bg-[#FF3E41]/5 rounded-2xl p-5">
+            <div className="border border-[#FF3E41]/20 bg-[#004d95]/5 rounded-2xl p-5">
               <div className="font-mono text-[10px] text-[#FF3E41] tracking-widest uppercase mb-3">Service Ports</div>
               <div className="grid grid-cols-3 gap-2">
                 {["Chittagong", "Mongla", "Payra"].map((port) => (
-                  <div key={port} className="text-center py-2.5 rounded-xl bg-white border border-[#FF3E41]/10">
+                  <div key={port} className="text-center py-2.5 rounded-xl bg-white border border-[#004d95]/10">
                     <div className="font-bold text-[#060315] text-[11px]">{port}</div>
                   </div>
                 ))}

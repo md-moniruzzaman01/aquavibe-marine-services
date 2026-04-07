@@ -9,6 +9,7 @@ import TestimonialSection from "./Home/partials/Testimonial";
 import ClientsBanner from "./Home/partials/ClientsBanner";
 import CTABanner from "./Home/partials/CTABanner";
 import Certifications from "./Home/partials/Certifications";
+import AboutSection from "./Home/partials/AboutSection";
 
 export default function HomePage() {
   const jsonLd = {
@@ -59,13 +60,13 @@ export default function HomePage() {
 
       {/* 1. Hero Carousel — dark / full-bleed */}
       <HeroCarousel />
-      
+
       {/* 3. Clients Banner — white, infinite marquee of shipping lines */}
       <ClientsBanner />
 
       {/* 2. About — dark navy, stats + split layout */}
-      <AboutModern />
-
+      {/* <AboutModern /> */}
+      <AboutSection />
       {/* 4. Services — white, 12-card grid */}
       <ServicesSection />
 
@@ -82,7 +83,7 @@ export default function HomePage() {
       <WhyChooseUs />
 
       {/* 9. CTA Banner — dramatic full-bleed ship image with contact box */}
-      <CTABanner />
+      {/* <CTABanner /> */}
 
       {/* 10. Contact — white, form + info */}
       <ContactSection />

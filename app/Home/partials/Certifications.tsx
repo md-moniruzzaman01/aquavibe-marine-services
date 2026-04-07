@@ -132,7 +132,7 @@ export default function Certifications() {
               </div>
             </div>
 
-            <div className="bg-[#060315] rounded-2xl p-7 border border-white/5">
+            <div className=" rounded-2xl p-7 border border-white/5">
               <div className="flex items-center gap-2 mb-5">
                 <Shield className="w-4 h-4 text-[#FF3E41]" />
                 <span className="font-mono text-xs text-[#51CFED] tracking-widest uppercase">Compliance Standards Met</span>
@@ -147,7 +147,7 @@ export default function Certifications() {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle className="w-4 h-4 text-[#51CFED] flex-shrink-0 mt-0.5" />
-                    <span className="text-white/60 text-sm leading-relaxed">{point}</span>
+                    <span className=" text-sm leading-relaxed">{point}</span>
                   </motion.div>
                 ))}
               </div>

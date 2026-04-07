@@ -1,7 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { MapPin, Ship, Users, BarChart3 } from "lucide-react";
+import { MapPin, Ship, Users, BarChart3, LucideIcon } from "lucide-react";
+
+
+interface FeatureProps {
+  icon: LucideIcon;
+  text: string;
+}
+
 
 export default function AboutSection() {
   return (
@@ -99,7 +106,7 @@ export default function AboutSection() {
 }
 
 /* Small reusable component */
-function Feature({ icon: Icon, text }) {
+function Feature({ icon: Icon, text }: FeatureProps) {
   return (
     <div className="flex items-center gap-2 text-sm text-gray-700">
       <Icon className="w-4 h-4 text-blue-600" />

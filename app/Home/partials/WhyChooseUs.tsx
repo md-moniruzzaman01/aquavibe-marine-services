@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative bg-[#060315] overflow-hidden py-24 lg:py-32" ref={ref}>
+    <section className="relative  overflow-hidden py-24 lg:py-32" ref={ref}>
       {/* Background texture */}
       <div
         className="absolute inset-0 opacity-[0.025]"
@@ -59,8 +59,8 @@ export default function WhyChooseUs() {
           backgroundSize: "32px 32px",
         }}
       />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-[#51CFED]/5 blur-3xl pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#FF3E41]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-blue-700/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-700/5 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
@@ -75,13 +75,13 @@ export default function WhyChooseUs() {
             <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Why Aquavibe</span>
             <div className="h-px w-8 bg-[#FF3E41]" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black  leading-tight">
             Why Choose{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3E41] to-[#51CFED]">
               Aquavibe?
             </span>
           </h2>
-          <p className="mt-4 text-white/50 text-base max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4  text-base max-w-xl mx-auto leading-relaxed">
             We have built a proven track record of excellence, reliability, and speed across Bangladesh's maritime industry.
           </p>
         </motion.div>
@@ -94,13 +94,13 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group bg-white/5 hover:bg-white/8 border border-white/10 hover:border-[#51CFED]/30 rounded-2xl p-6 transition-all duration-300"
+              className="group bg-black/5 hover:bg-black/8 border border-white/10 hover:border-[#004d95]/30 rounded-2xl p-6 transition-all duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-[#51CFED]/10 border border-[#51CFED]/20 flex items-center justify-center mb-4 group-hover:border-[#51CFED]/50 transition-colors">
+              <div className="w-11 h-11 rounded-xl bg-[#004d95]/10 border border-[#004d95]/20 flex items-center justify-center mb-4 group-hover:border-[#004d95]/50 transition-colors">
                 <Icon className="w-5 h-5 text-[#51CFED]" />
               </div>
-              <h4 className="font-bold text-white text-sm mb-2">{title}</h4>
-              <p className="text-white/50 text-xs leading-relaxed">{desc}</p>
+              <h4 className="font-bold  text-sm mb-2">{title}</h4>
+              <p className=" text-xs leading-relaxed">{desc}</p>
             </motion.div>
           ))}
         </div>
@@ -113,7 +113,7 @@ export default function WhyChooseUs() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden border border-black/10 shadow-2xl">
               <img
                 src="https://media.base44.com/images/public/69d33c7a3f79b23a0b421b4c/64be7a998_generated_de20fd18.png"
                 alt="Ship engineering excellence"
@@ -130,7 +130,7 @@ export default function WhyChooseUs() {
                 <div className="text-3xl font-black text-[#FF3E41] mb-1">500+</div>
                 <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase">Vessels Served</div>
               </div>
-              <div className="bg-[#51CFED]/10 border border-[#51CFED]/20 rounded-xl p-5">
+              <div className="bg-[#004d95]/10 border border-[#51CFED]/20 rounded-xl p-5">
                 <div className="text-3xl font-black text-[#51CFED] mb-1">3</div>
                 <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase">Active Ports</div>
               </div>
@@ -147,7 +147,7 @@ export default function WhyChooseUs() {
               <div className="h-px w-8 bg-[#FF3E41]" />
               <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">FAQ</span>
             </div>
-            <h3 className="text-2xl font-black text-white mb-8">Frequently Asked Questions</h3>
+            <h3 className="text-2xl font-black  mb-8">Frequently Asked Questions</h3>
 
             <div className="space-y-3">
               {FAQS.map((faq, i) => (
@@ -155,8 +155,8 @@ export default function WhyChooseUs() {
                   key={i}
                   className={`rounded-xl border transition-all duration-300 ${
                     openIndex === i
-                      ? "border-[#FF3E41]/40 bg-white/8"
-                      : "border-white/10 bg-white/5"
+                      ? "border-[#FF3E41]/40 bg-black/8"
+                      : "border-white/10 bg-black/5"
                   }`}
                 >
                   <button
@@ -167,7 +167,7 @@ export default function WhyChooseUs() {
                       <span className="font-mono text-xs text-[#FF3E41] flex-shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-semibold text-sm text-white">{faq.q}</span>
+                      <span className="font-semibold text-sm ">{faq.q}</span>
                     </div>
                     <ChevronDown
                       className={`w-4 h-4 text-[#FF3E41] flex-shrink-0 transition-transform duration-300 ${

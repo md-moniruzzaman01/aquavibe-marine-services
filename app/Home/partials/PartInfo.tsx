@@ -102,7 +102,7 @@ export default function PortInfo() {
             </div>
 
             {/* Specifications table */}
-            <div className="bg-[#060315] rounded-2xl p-6 border border-white/5">
+            <div className="bg-white rounded-2xl p-6 border border-[#51CFED]/5">
               <div className="flex items-center gap-2 mb-5">
                 <Anchor className="w-4 h-4 text-[#FF3E41]" />
                 <span className="font-mono text-xs text-[#51CFED] tracking-widest uppercase">Port Specifications</span>
@@ -110,8 +110,8 @@ export default function PortInfo() {
               <div className="space-y-3">
                 {PORT_SPECS.map(({ label, value }) => (
                   <div key={label} className="flex justify-between items-center py-2.5 border-b border-white/5 last:border-0">
-                    <span className="font-mono text-[10px] text-white/40 tracking-wider">{label}</span>
-                    <span className="font-mono text-xs text-white font-semibold">{value}</span>
+                    <span className="font-mono text-[10px]  tracking-wider">{label}</span>
+                    <span className="font-mono text-xs  font-semibold">{value}</span>
                   </div>
                 ))}
               </div>

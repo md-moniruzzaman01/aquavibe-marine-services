@@ -3,8 +3,21 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const SERVICES = [
-  { title: "Marine Fender Suppoly", image: "/services/2-min-2.png" },
+// 1. Define the Service interface
+interface Service {
+  title: string;
+  image: string;
+}
+
+// 2. Define props for the ServiceCard component
+interface ServiceCardProps {
+  service: Service;
+  index: number;
+  isInView: boolean;
+}
+
+const SERVICES: Service[] = [
+  { title: "Marine Fender Supply", image: "/services/2-min-2.png" },
   { title: "Crane grab rental service", image: "services/2-min-2.png" },
   { title: "Ship reparing & maintenance", image: "services/1-min-2.png" },
   { title: "Bunker Supply", image: "services/7-min.png" },
@@ -12,14 +25,15 @@ const SERVICES = [
   { title: "Bond store supply", image: "services/5-min.png" },
   { title: "Store Supply", image: "services/6-min.png" },
   { title: "Cleaning Service", image: "services/8-min.png" },
-  { title: "Security serice", image: "services/10-min.png" },
-  { title: "Repaing serivces", image: "services/11.png" },
+  { title: "Security service", image: "services/10-min.png" },
+  { title: "Repaing services", image: "services/11.png" },
   { title: "Marine Lube oil", image: "services/12.png" },
   { title: "Ship Crane Repair & Crane spare parts supply services", image: "services/BOND-STORE-SUPPLY.png" },
 ];
 
 export default function ServicesGrid() {
-  const ref = useRef(null);
+  // 3. Type the ref for an HTML element
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   return (
@@ -40,7 +54,12 @@ export default function ServicesGrid() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {SERVICES.map((service, i) => (
-            <ServiceCard key={service.title} service={service} index={i} isInView={isInView} />
+            <ServiceCard 
+              key={service.title} 
+              service={service} 
+              index={i} 
+              isInView={isInView} 
+            />
           ))}
         </div>
       </div>
@@ -48,7 +67,8 @@ export default function ServicesGrid() {
   );
 }
 
-function ServiceCard({ service, index, isInView }) {
+// 4. Apply the ServiceCardProps interface
+function ServiceCard({ service, index, isInView }: ServiceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -62,11 +82,11 @@ function ServiceCard({ service, index, isInView }) {
           alt={service.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-       <div className="absolute inset-0 bg-gradient-to-t from-[#004d95]/30 via-[#004d95]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#004d95]/30 via-[#004d95]/20 to-transparent" />
         {/* Glassmorphism overlay on hover */}
         <div className="absolute inset-0 bg-[#004d95]/5 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
-     
+      
       <div className="p-2.5 pb-3.5 ">
         <div className="font-mono text-[9px] text-white tracking-widest mb-2">
           SRV—{String(index + 1).padStart(3, '0')}
@@ -75,7 +95,6 @@ function ServiceCard({ service, index, isInView }) {
           {service.title}
         </h3>
       </div>
-        
     </motion.div>
   );
 }

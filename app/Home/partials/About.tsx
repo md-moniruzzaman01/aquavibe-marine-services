@@ -1,114 +1,108 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion";
-import { MapPin, Ship, Users, BarChart3, Phone, Globe, Truck, Star } from "lucide-react";
+import { Ship, MapPin, Anchor } from "lucide-react";
 
-export default function AboutModern() {
+export default function ShippingSection() {
   return (
-    <section className="py-20 bg-white font-sans">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-white py-20 px-6 lg:px-16">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         
-        {/* UPPER SECTION: Split Image & Text */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
-          {/* Left: Professional Image with Overlay */}
-          <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" 
-              alt="Shipping Logistics" 
-              className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors"></div>
-          </div>
+        {/* ===== LEFT IMAGE ===== */}
+        <div className="relative">
+          <img
+            src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1000&q=80"
+            alt="Shipping Bangladesh"
+            className="rounded-2xl shadow-xl h-[500px] w-full object-cover"
+          />
 
-          {/* Right: Modern Content */}
-          <div className="space-y-6">
-            <div className="inline-block px-4 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold tracking-widest uppercase">
-              Chittagong • Mongla • Payra
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-              Quick Transport and <br/> 
-              <span className="text-red-600">Logistics Solutions</span>
-            </h2>
-
-            <p className="text-gray-600 text-lg leading-relaxed">
-              Our ship manning and management services deliver top-tier crewing solutions, 
-              ensuring your vessels are operated by highly skilled professionals across all major ports in Bangladesh.
-            </p>
-
-            <div className="grid grid-cols-2 gap-8 pt-4">
-              <div className="flex gap-4">
-                <div className="bg-red-100 p-3 rounded-lg h-fit">
-                  <Globe className="w-6 h-6 text-red-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900">Global Coverage</h4>
-                  <p className="text-sm text-gray-500">Skilled crew & management for international waters.</p>
-                </div>
+          {/* Floating Card */}
+          <div className="absolute bottom-6 left-6 bg-white shadow-lg rounded-xl p-4 flex items-center gap-3">
+            <Ship className="text-blue-600" />
+            <div>
+              <div className="font-bold text-sm">All Major Ports Covered</div>
+              <div className="text-xs text-gray-500">
+                Chittagong • Mongla • Payra
               </div>
-              <div className="flex gap-4">
-                <div className="bg-red-100 p-3 rounded-lg h-fit">
-                  <Truck className="w-6 h-6 text-red-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900">On Time Delivery</h4>
-                  <p className="text-sm text-gray-500">Prioritizing maintenance and operational safety.</p>
-                </div>
-              </div>
-            </div>
-
-            <button className="mt-6 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-md transition-all shadow-lg hover:shadow-red-200 uppercase tracking-wider text-sm">
-              Explore More
-            </button>
-          </div>
-        </div>
-
-        {/* LOWER SECTION: Stats & Location */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Left: Location Facts */}
-          <div className="space-y-6">
-            <span className="text-red-600 font-bold text-sm tracking-widest uppercase">Some Facts</span>
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-snug">
-              #1 Place To Manage All Of <br/> Your Shipments
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Located at coordinates N 22° 16′ 22.79″ — E 091° 49′ 55.20″. 
-              The official UN/Locode is BDCGP, ensuring fast and efficient service delivery for vessels visiting Chittagong.
-            </p>
-            
-            <div className="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border-l-4 border-red-600 w-fit">
-              <div className="bg-red-600 p-3 rounded-full text-white">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-xs text-gray-500 font-bold uppercase">Call for any query!</p>
-                <p className="text-xl font-bold text-slate-900">+880 123 456 789</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Colored Stats Grid */}
-          <div className="grid grid-cols-2 gap-4">
-            <StatCard count="1234" label="Happy Clients" icon={Users} color="bg-red-500" />
-            <div className="space-y-4">
-              <StatCard count="100%" label="Customer Reviews" icon={Star} color="bg-emerald-600" />
-              <StatCard count="245m" label="Max Vessel Length" icon={Ship} color="bg-sky-400" />
             </div>
           </div>
         </div>
 
+        {/* ===== RIGHT CONTENT ===== */}
+        <div className="space-y-6">
+          {/* Small label */}
+          <p className="text-sm text-blue-600 font-semibold uppercase tracking-wider">
+            Shipping & Logistics
+          </p>
+
+          {/* Heading */}
+          <h2 className="text-4xl font-extrabold leading-tight text-gray-900">
+            Service Provider in Bangladesh
+          </h2>
+
+          {/* Subheading */}
+          <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
+            <Anchor size={18} /> Ship Manning & Management
+          </h3>
+
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed">
+            We deliver top-tier ship manning and management services, ensuring
+            vessels are operated by highly skilled professionals. Our focus on
+            maintenance, regulatory compliance, and operational safety guarantees
+            efficient and reliable marine operations.
+          </p>
+
+          {/* Ports */}
+          <div className="flex flex-wrap gap-3">
+            {["Chittagong", "Mongla", "Payra"].map((port) => (
+              <span
+                key={port}
+                className="px-4 py-1.5 text-sm bg-blue-50 text-blue-700 rounded-full"
+              >
+                {port}
+              </span>
+            ))}
+          </div>
+
+          {/* ===== AT A GLANCE ===== */}
+          <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="p-4 bg-gray-50 rounded-lg">
+              <p className="text-sm text-gray-500">Top Vessel</p>
+              <p className="font-bold">Container (27%)</p>
+            </div>
+
+            <div className="p-4 bg-gray-50 rounded-lg">
+              <p className="text-sm text-gray-500">Bulk Carrier</p>
+              <p className="font-bold">21%</p>
+            </div>
+
+            <div className="p-4 bg-gray-50 rounded-lg">
+              <p className="text-sm text-gray-500">Max Length</p>
+              <p className="font-bold">245m</p>
+            </div>
+
+            <div className="p-4 bg-gray-50 rounded-lg">
+              <p className="text-sm text-gray-500">Max Draught</p>
+              <p className="font-bold">12.1m</p>
+            </div>
+          </div>
+
+          {/* Extra Info */}
+          <p className="text-sm text-gray-500">
+            Fleet includes Bulk Carriers, Oil & Chemical Tankers, General Cargo,
+            and Oil Product Tankers. Maximum Deadweight: <b>109,280 DWT</b>.
+          </p>
+
+          {/* Location */}
+          <div className="border-t pt-4 flex gap-3 items-start">
+            <MapPin className="text-blue-700 mt-1" size={18} />
+            <p className="text-sm text-gray-600">
+              Located in Chattogram (BDCGP), Bay of Bengal, Bangladesh — enabling
+              fast response and efficient vessel servicing.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
-  );
-}
-
-function StatCard({ count, label, icon: Icon, color }) {
-  return (
-    <div className={`${color} p-8 rounded-lg text-white shadow-lg flex flex-col justify-end min-h-[160px] transform transition-transform hover:-translate-y-1`}>
-      <Icon className="w-8 h-8 mb-4 opacity-80" />
-      <h2 className="text-3xl font-bold">{count}</h2>
-      <p className="text-sm font-medium opacity-90">{label}</p>
-    </div>
   );
 }

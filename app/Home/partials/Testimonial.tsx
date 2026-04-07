@@ -1,116 +1,177 @@
 "use client";
 
-import React from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Star, Quote } from "lucide-react";
 
 interface Testimonial {
   id: number;
   name: string;
-  profession: string;
-  image: string;
+  role: string;
+  company: string;
+  initials: string;
   quote: string;
+  rating: number;
+  port: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Client Name",
-    profession: "Profession",
-    image: "/img/testimonial-1.jpg", // Replace with your paths
-    quote: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.",
+    name: "Capt. Rahman Al-Farouq",
+    role: "Master",
+    company: "MV Sea Pioneer",
+    initials: "RF",
+    quote:
+      "Aquavibe Marine Services has been our go-to ship chandler in Chittagong for over two years. Their provisions arrive fresh, their spare parts are genuine, and their response time is unmatched. Highly recommended for all visiting vessels.",
+    rating: 5,
+    port: "Chittagong",
   },
   {
     id: 2,
-    name: "Client Name",
-    profession: "Profession",
-    image: "/img/testimonial-2.jpg",
-    quote: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.",
+    name: "Mr. Kim Sung-Jin",
+    role: "Fleet Superintendent",
+    company: "Korea Shipping Co.",
+    initials: "KS",
+    quote:
+      "We coordinate all our vessel supplies in Bangladesh through Aquavibe. Their professionalism and ability to handle last-minute requirements 24/7 has saved us enormous time and cost. A truly reliable partner.",
+    rating: 5,
+    port: "All Ports",
   },
   {
     id: 3,
-    name: "Client Name",
-    profession: "Profession",
-    image: "/img/testimonial-3.jpg",
-    quote: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.",
+    name: "Mr. Sanjay Verma",
+    role: "Ship Manager",
+    company: "IndoShip Management",
+    initials: "SV",
+    quote:
+      "From bunker supply to emergency engine repairs — Aquavibe delivers on every front. Their certified engineers resolved our main engine issue within hours of arrival at Mongla Port. Exceptional service.",
+    rating: 5,
+    port: "Mongla",
+  },
+  {
+    id: 4,
+    name: "Capt. Ahmed Al-Rashidi",
+    role: "Technical Manager",
+    company: "Gulf Maritime LLC",
+    initials: "AR",
+    quote:
+      "The team at Aquavibe is knowledgeable, efficient and always available. They understand the maritime industry's demands and consistently go above and beyond. Our vessels always leave Bangladesh well-provisioned.",
+    rating: 5,
+    port: "Payra",
   },
 ];
 
 export default function TestimonialSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    loop: true,
-    skipSnaps: false,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="relative  overflow-hidden py-24 lg:py-32" ref={ref}>
+      {/* Background */}
+      <div
+        className="absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, #51CFED 1px, transparent 0)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#004d95]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#004d95]/5 blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h6 className="text-cyan-500 uppercase tracking-widest font-semibold mb-2">
-            Testimonial
-          </h6>
-          <h2 className="text-4xl font-bold text-slate-900">Our Clients Say!</h2>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-3 mb-4">
+            <div className="h-px w-8 bg-[#FF3E41]" />
+            <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Testimonials</span>
+            <div className="h-px w-8 bg-[#FF3E41]" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black  leading-tight">
+            What Our{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3E41] to-[#51CFED]">
+              Clients Say
+            </span>
+          </h2>
+          <p className="mt-4  text-base max-w-lg mx-auto leading-relaxed">
+            Trusted by ship masters, fleet managers and maritime companies from around the world.
+          </p>
+        </motion.div>
 
-        {/* Carousel Viewport */}
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {testimonials.map((item) => (
-              <div
-                key={item.id}
-                className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.33%] px-4"
-              >
-                <div className="relative bg-white p-8 my-10 shadow-sm hover:shadow-xl transition-shadow duration-300 rounded-sm group">
-                  {/* Quote Icon - Using SVG for better control than FontAwesome */}
-                  <div className="absolute -top-4 right-8 text-gray-100 group-hover:text-cyan-50 transition-colors">
-                    <svg
-                      width="60"
-                      height="60"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
+        {/* Testimonial grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {testimonials.map((item, i) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group relative  hover:bg-white/8 border border-white/10 hover:border-[#FF3E41]/30 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
+            >
+              {/* Large quote icon bg */}
+              <Quote className="absolute top-4 right-5 w-16 h-16 text-white/3 rotate-180" />
+
+              {/* Stars */}
+              <div className="flex gap-1 mb-5">
+                {Array.from({ length: item.rating }).map((_, j) => (
+                  <Star key={j} className="w-3.5 h-3.5 fill-[#FF3E41] text-[#FF3E41]" />
+                ))}
+              </div>
+
+              {/* Quote */}
+              <p className=" text-sm leading-relaxed italic mb-6">
+                "{item.quote}"
+              </p>
+
+              {/* Client info */}
+              <div className="flex items-center gap-4">
+                {/* Avatar with initials */}
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#FF3E41] to-[#51CFED] flex items-center justify-center flex-shrink-0">
+                  <span className=" font-black text-xs">{item.initials}</span>
+                </div>
+                <div>
+                  <div className="font-bold  text-sm">{item.name}</div>
+                  <div className="font-mono text-[10px]  tracking-wider">
+                    {item.role} — {item.company}
                   </div>
-
-                  {/* Client Info */}
-                  <div className="flex items-end mb-6">
-                    <div className="relative w-20 h-20 flex-shrink-0">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-cover border-4 border-white shadow-sm"
-                      />
-                    </div>
-                    <div className="ml-4">
-                      <h5 className="text-lg font-bold text-slate-800 leading-tight">
-                        {item.name}
-                      </h5>
-                      <p className="text-gray-500 text-sm italic">
-                        {item.profession}
-                      </p>
-                    </div>
+                </div>
+                <div className="ml-auto">
+                  <div className="text-right px-3 py-1 rounded-full bg-[#004d95]/10 border border-[#51CFED]/20">
+                    <span className="font-mono text-[9px] text-[#51CFED] tracking-widest uppercase">{item.port}</span>
                   </div>
-
-                  {/* Feedback */}
-                  <p className="text-gray-600 leading-relaxed italic">
-                    "{item.quote}"
-                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Bottom accent */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#FF3E41] to-[#51CFED] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+            </motion.div>
+          ))}
         </div>
 
-        {/* Pagination Dots */}
-        <div className="flex justify-center gap-2 mt-4">
-          <button className="w-2 h-2 rounded-full bg-gray-300 hover:bg-cyan-500 transition-colors" />
-          <button className="w-4 h-2 rounded-full bg-red-500 transition-colors" />
-          <button className="w-2 h-2 rounded-full bg-gray-300 hover:bg-cyan-500 transition-colors" />
-        </div>
+        {/* Trust badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-16 flex flex-wrap justify-center gap-6 text-center"
+        >
+          {[
+            { value: "500+", label: "Vessels Served" },
+            { value: "3", label: "Active Ports" },
+            { value: "24/7", label: "Operations" },
+            { value: "100%", label: "Satisfaction Rate" },
+          ].map(({ value, label }) => (
+            <div key={label} className="px-8 py-4 rounded-2xl bg-white/5 border border-white/10">
+              <div className="text-2xl font-black  mb-1">{value}</div>
+              <div className="font-mono text-[10px]  tracking-widest uppercase">{label}</div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

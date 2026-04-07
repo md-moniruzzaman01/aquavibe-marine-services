@@ -1,167 +1,202 @@
-"use client"
+"use client";
 
-import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Phone, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
-import { Input } from '@/components/Input';
-import { Textarea } from '@/components/Textarea';
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Phone, Mail, MapPin, MessageCircle, Send, Clock, CheckCircle } from "lucide-react";
 
 const CONTACT_CARDS = [
   {
     icon: Phone,
-    title: 'CALL US',
-    desc: '24/7 Available customer service',
-    action: 'tel:+8801728841299',
-    label: '+880 1728 841299',
+    title: "Call Us",
+    desc: "24/7 Available",
+    action: "tel:+8801728841299",
+    label: "+880 1728 841299",
+    color: "from-[#FF3E41] to-[#c8292c]",
   },
   {
     icon: Mail,
-    title: 'EMAIL US',
-    desc: "Don't hesitate to reach out",
-    action: 'mailto:aquavibe2023@gmail.com',
-    label: 'aquavibe2023@gmail.com',
+    title: "Email Us",
+    desc: "We reply within 2 hours",
+    action: "mailto:aquavibe2023@gmail.com",
+    label: "aquavibe2023@gmail.com",
+    color: "from-[#51CFED] to-[#2ab8d8]",
   },
   {
     icon: MessageCircle,
-    title: 'WHATSAPP',
-    desc: 'Quick messaging support',
-    action: 'https://wa.me/+8801728841299',
-    label: '+880 1728 841299',
+    title: "WhatsApp",
+    desc: "Quick messaging support",
+    action: "https://wa.me/+8801728841299",
+    label: "+880 1728 841299",
+    color: "from-green-500 to-green-600",
   },
 ];
 
 export default function ContactSection() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', port: '', message: '' });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    port: "",
+    message: "",
+  });
   const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
     setTimeout(() => {
       setSending(false);
-      setForm({ name: '', email: '', phone: '', port: '', message: '' });
+      setSent(true);
+      setForm({ name: "", email: "", phone: "", port: "", message: "" });
+      setTimeout(() => setSent(false), 4000);
     }, 1500);
   };
 
   return (
-    <section id="contact" className="relative py-32 lg:py-40 bg-white">
-      <div className="absolute top-0 left-0 right-0 h-px bg-border" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
+    <section id="contact" className="bg-white py-24 lg:py-32 relative overflow-hidden" ref={ref}>
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50/50 -z-0" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#004d95]/5 blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="mb-16"
         >
-          <div className="font-mono text-primary text-xs tracking-[0.3em] mb-4">COMMAND PORTAL</div>
-          <h2 className="font-display font-black text-3xl md:text-5xl text-foreground tracking-tight uppercase">
-            GET IN TOUCH
-          </h2>
-          <div className="mt-6 h-px w-16 bg-primary mx-auto" />
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8 bg-[#FF3E41]" />
+            <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Contact Us</span>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <h2 className="text-4xl md:text-5xl font-black text-[#004d95] leading-tight">
+              Get In{" "}
+              <span className="text-[#FF3E41]">Touch</span>
+            </h2>
+            <p className="text-gray-400 text-sm max-w-sm leading-relaxed font-mono">
+              Our team is available 24 hours a day, 7 days a week to assist with all your vessel requirements.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Contact Cards */}
+        {/* Contact cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
           {CONTACT_CARDS.map((card, i) => (
             <motion.a
               key={card.title}
               href={card.action}
-              target={card.action.startsWith('http') ? '_blank' : undefined}
+              target={card.action.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group p-6 rounded-xl border border-border bg-card/50 hover:border-primary/30 transition-all duration-300 text-center"
+              className="group relative  border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-4 group-hover:border-primary/40 transition-colors">
-                <card.icon className="w-5 h-5 text-primary" />
+              {/* Gradient bar at top */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${card.color}`} />
+
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 shadow-lg`}>
+                <card.icon className="w-5 h-5 " />
               </div>
-              <div className="font-display font-bold text-sm text-foreground tracking-wider mb-1">{card.title}</div>
-              <div className="font-mono text-[10px] text-muted-foreground tracking-wider mb-3">{card.desc}</div>
-              <div className="font-mono text-xs text-primary">{card.label}</div>
+              <div className="font-bold text-[#004d95] text-sm mb-1">{card.title}</div>
+              <div className="font-mono text-[10px] text-gray-400 tracking-wider mb-3 uppercase">{card.desc}</div>
+              <div className="text-[#FF3E41] text-sm font-semibold group-hover:underline">{card.label}</div>
             </motion.a>
           ))}
         </div>
 
-        {/* Form + Location */}
-        <div className="grid lg:grid-cols-2 gap-12">
+        {/* Form + Info grid */}
+        <div className="grid lg:grid-cols-5 gap-10">
+          {/* Form — 3 cols */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
+            className="lg:col-span-3"
           >
-            <div className="p-6 lg:p-8 rounded-xl border border-border bg-card/50">
-              <div className="font-mono text-[10px] text-primary tracking-widest mb-1">TRANSMISSION FORM</div>
-              <h3 className="font-display font-bold text-lg text-foreground tracking-wider uppercase mb-6">NEED HELP?</h3>
+            <div className=" rounded-2xl p-8 border border-white/5 shadow-2xl">
+              <div className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase mb-1">Send Message</div>
+              <h3 className="font-bold text-xl  mb-6">Request a Service</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="font-mono text-[10px] text-muted-foreground tracking-wider mb-1.5 block">YOUR NAME *</label>
-                    <Input
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Your Name *</label>
+                    <input
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="bg-secondary/50 border-border focus:border-primary text-foreground font-display"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50  text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="Full Name"
                     />
                   </div>
                   <div>
-                    <label className="font-mono text-[10px] text-muted-foreground tracking-wider mb-1.5 block">EMAIL *</label>
-                    <Input
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Email *</label>
+                    <input
                       required
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="bg-secondary/50 border-border focus:border-primary text-foreground font-display"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="email@example.com"
                     />
                   </div>
                 </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="font-mono text-[10px] text-muted-foreground tracking-wider mb-1.5 block">CONTACT NUMBER</label>
-                    <Input
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Phone Number</label>
+                    <input
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="bg-secondary/50 border-border focus:border-primary text-foreground font-display"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="+880..."
                     />
                   </div>
                   <div>
-                    <label className="font-mono text-[10px] text-muted-foreground tracking-wider mb-1.5 block">ARRIVAL PORT</label>
-                    <Input
+                    <label className="font-mono text-[10px] text-black/40 tracking-wider mb-1.5 block uppercase">Arrival Port</label>
+                    <input
                       value={form.port}
                       onChange={(e) => setForm({ ...form, port: e.target.value })}
-                      className="bg-secondary/50 border-border focus:border-primary text-foreground font-display"
-                      placeholder="Country / Port"
+                      className="w-full bg-black/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
+                      placeholder="Chittagong / Mongla / Payra"
                     />
                   </div>
                 </div>
+
                 <div>
-                  <label className="font-mono text-[10px] text-muted-foreground tracking-wider mb-1.5 block">MESSAGE</label>
-                  <Textarea
+                  <label className="font-mono text-[10px] text-white/40 tracking-wider mb-1.5 block uppercase">Message</label>
+                  <textarea
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="bg-secondary/50 border-border focus:border-primary text-foreground font-display min-h-[120px]"
-                    placeholder="Your message..."
-                    maxLength={180}
+                    className="w-full bg-white/5 border border-black/10 focus:border-[#FF3E41]/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20 min-h-[110px] resize-none"
+                    placeholder="Describe your vessel requirements..."
+                    maxLength={300}
                   />
-                  <div className="font-mono text-[9px] text-muted-foreground mt-1 text-right">{form.message.length} / 180</div>
+                  <div className="font-mono text-[9px] text-black/20 mt-1 text-right">{form.message.length} / 300</div>
                 </div>
+
                 <button
                   type="submit"
-                  disabled={sending}
-                  className="w-full py-3.5 bg-primary text-primary-foreground font-display font-semibold text-sm tracking-widest uppercase rounded sonar-pulse hover:shadow-lg hover:shadow-primary/25 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                  disabled={sending || sent}
+                  className="w-full py-4 bg-[#FF3E41] hover:bg-[#e63538] disabled:opacity-60 font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-[#FF3E41]/25 flex items-center justify-center gap-2"
                 >
                   {sending ? (
-                    <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                    <div className="w-4 h-4 border-2 border-black/30 border-t-white rounded-full animate-spin" />
+                  ) : sent ? (
+                    <>
+                      <CheckCircle className="w-4 h-4" />
+                      Message Sent!
+                    </>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      SEND MESSAGE
+                      Send Message
                     </>
                   )}
                 </button>
@@ -169,44 +204,66 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
+          {/* Info — 2 cols */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6"
+            className="lg:col-span-2 space-y-5"
           >
-            <div className="p-6 lg:p-8 rounded-xl border border-border bg-card/50">
-              <div className="font-mono text-[10px] text-primary tracking-widest mb-4">OFFICE COORDINATES</div>
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4 text-primary" />
+            {/* Office Info */}
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div className="font-mono text-[10px] text-[#FF3E41] tracking-widest uppercase mb-4">Head Office</div>
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-[#004d95]/10 border border-[#004d95]/20 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-4 h-4 text-[#FF3E41]" />
                 </div>
                 <div>
-                  <div className="font-display font-semibold text-sm text-foreground mb-1">HEAD OFFICE</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    6th floor, 146/A Simla House,<br />
+                  <div className="font-bold text-[#060315] text-sm mb-1">Aquavibe Marine Services</div>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    6th Floor, 146/A Simla House,<br />
                     Agrabad, Chittagong 4100,<br />
                     Bangladesh
                   </p>
                 </div>
               </div>
-
-              <div className="space-y-3">
-                <ContactRow label="PHONE LINE 1" value="+880 1728 841299" />
-                <ContactRow label="PHONE LINE 2" value="+880 1521 387459" />
-                <ContactRow label="EMAIL" value="aquavibe2023@gmail.com" />
-                <ContactRow label="WHATSAPP" value="+880 1728 841299" />
+              <div className="space-y-2.5">
+                {[
+                  { label: "Phone 1", value: "+880 1728 841299" },
+                  { label: "Phone 2", value: "+880 1521 387459" },
+                  { label: "Email", value: "aquavibe2023@gmail.com" },
+                  { label: "WhatsApp", value: "+880 1728 841299" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="flex justify-between items-center py-2 border-b border-gray-50 last:border-0">
+                    <span className="font-mono text-[10px] text-gray-400 tracking-wider uppercase">{label}</span>
+                    <span className="text-[#060315] text-xs font-semibold">{value}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Ports served */}
-            <div className="p-6 rounded-xl border border-border bg-card/50">
-              <div className="font-mono text-[10px] text-primary tracking-widest mb-4">SERVICE COVERAGE</div>
-              <div className="grid grid-cols-3 gap-3">
-                {['CHITTAGONG', 'MONGLA', 'PAYRA'].map((port, i) => (
-                  <div key={port} className="text-center p-3 rounded-lg bg-secondary/50 border border-border">
-                    <div className="font-mono text-[9px] text-primary tracking-widest mb-1">PORT—{String(i + 1).padStart(2, '0')}</div>
-                    <div className="font-display font-bold text-xs text-foreground tracking-wider">{port}</div>
+            {/* Hours */}
+            <div className="bg-white rounded-2xl p-6 border border-white/5">
+              <div className="flex items-center gap-2 mb-4">
+                <Clock className="w-4 h-4 text-[#51CFED]" />
+                <span className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase">Operating Hours</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <div className="text-white font-bold text-sm">24 Hours / 7 Days a Week</div>
+              </div>
+              <p className="text-white/40 text-xs mt-2 leading-relaxed">
+                Our operations team never sleeps. Emergency support always available for urgent vessel requirements.
+              </p>
+            </div>
+
+            {/* Port coverage */}
+            <div className="border border-[#FF3E41]/20 bg-[#004d95]/5 rounded-2xl p-5">
+              <div className="font-mono text-[10px] text-[#FF3E41] tracking-widest uppercase mb-3">Service Ports</div>
+              <div className="grid grid-cols-3 gap-2">
+                {["Chittagong", "Mongla", "Payra"].map((port) => (
+                  <div key={port} className="text-center py-2.5 rounded-xl bg-white border border-[#004d95]/10">
+                    <div className="font-bold text-[#060315] text-[11px]">{port}</div>
                   </div>
                 ))}
               </div>
@@ -215,14 +272,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ContactRow({ label, value }) {
-  return (
-    <div className="flex items-center justify-between py-2 border-b border-border last:border-0">
-      <span className="font-mono text-[10px] text-muted-foreground tracking-wider">{label}</span>
-      <span className="font-mono text-xs text-foreground">{value}</span>
-    </div>
   );
 }

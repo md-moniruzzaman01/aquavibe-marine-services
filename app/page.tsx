@@ -1,7 +1,4 @@
-import Image from "next/image";
 import HeroCarousel from "./Home/partials/HeroSlider";
-import ServicesGrid from "./Home/partials/ServicesGrid";
-import ProductsSection from "./Home/partials/ProductsSection";
 import ServicesSection from "./Home/partials/ServicesSection";
 import AboutModern from "./Home/partials/About";
 import Products from "./Home/partials/Products";
@@ -9,10 +6,11 @@ import PortInfo from "./Home/partials/PartInfo";
 import WhyChooseUs from "./Home/partials/WhyChooseUs";
 import ContactSection from "./Home/partials/ContactUs";
 import TestimonialSection from "./Home/partials/Testimonial";
+import ClientsBanner from "./Home/partials/ClientsBanner";
+import CTABanner from "./Home/partials/CTABanner";
+import Certifications from "./Home/partials/Certifications";
+import AboutSection from "./Home/partials/AboutSection";
 
-
-
-// app/page.tsx  (add alongside your existing JSX)
 export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -32,7 +30,7 @@ export default function HomePage() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 22.2730,
+      latitude: 22.273,
       longitude: 91.8321,
     },
     openingHours: "Mo-Su 00:00-24:00",
@@ -59,23 +57,39 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HeroCarousel/>
-      <AboutModern/>
-      <ServicesSection/>
-      <Products/>
-      <PortInfo/>
-      <WhyChooseUs/>
-      <ContactSection/>
 
-      <TestimonialSection/>
-      {/* <AboutSection/> */}
-      {/* <ServicesGrid/> */}
-      {/* <ProductsSection/> */}
-      
+      {/* 1. Hero Carousel — dark / full-bleed */}
+      <HeroCarousel />
 
+      {/* 3. Clients Banner — white, infinite marquee of shipping lines */}
+      <ClientsBanner />
 
-      
+      {/* 2. About — dark navy, stats + split layout */}
+      {/* <AboutModern /> */}
+      <AboutSection />
+      {/* 4. Services — white, 12-card grid */}
+      <ServicesSection />
+
+      {/* 5. Products — dark navy, supply catalog */}
+      <Products />
+
+      {/* 6. Port Info — white, Chittagong / Mongla / Payra */}
+      <PortInfo />
+
+      {/* 7. Certifications — white, accreditations & compliance */}
+      <Certifications />
+
+      {/* 8. Why Choose Us — dark navy, benefit cards + FAQ */}
+      <WhyChooseUs />
+
+      {/* 9. CTA Banner — dramatic full-bleed ship image with contact box */}
+      {/* <CTABanner /> */}
+
+      {/* 10. Contact — white, form + info */}
+      <ContactSection />
+
+      {/* 11. Testimonials — dark navy, client reviews */}
+      <TestimonialSection />
     </>
   );
 }
-

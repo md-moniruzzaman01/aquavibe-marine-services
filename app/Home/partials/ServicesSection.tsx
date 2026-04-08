@@ -97,9 +97,7 @@ const ServicesSection: React.FC = () => {
           </p>
 
           <h2 className="text-4xl md:text-5xl font-extrabold leading-[1.05] tracking-tight text-[#1d2128]">
-            Comprehensive Maritime
-            <br />
-            Service Solutions
+             Sultan Fleet Serve
           </h2>
 
           <div className="mt-6 flex items-center gap-3">
@@ -108,9 +106,10 @@ const ServicesSection: React.FC = () => {
           </div>
 
           <p className="mt-6 text-gray-600 leading-relaxed">
-            We deliver reliable ship chandling, logistics, and marine support
-            services across all major ports in Bangladesh — ensuring efficiency,
-            safety, and operational excellence.
+            Sultan Fleet Serve delivers a full spectrum of marine, logistics, and vessel support services
+across all major seaports of Bangladesh, including Chattogram, Mongla, and Payra. With a
+strong operational presence and experienced workforce, we ensure that every service is executed
+with precision, safety, and efficiency to meet international maritime standards.
           </p>
         </motion.div>
 

@@ -23,7 +23,8 @@ export default function HomePage() {
     email: "sultanfleetserve@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Sultan Fleet Serve, Oriyent Building, 3 No. Fakirhat Bandar",
+      streetAddress:
+        "Sultan Fleet Serve, Oriyent Building, 3 No. Fakirhat Bandar",
       addressLocality: "Chittagong",
       postalCode: "4100",
       addressCountry: "BD",
@@ -74,17 +75,16 @@ export default function HomePage() {
       <Products />
 
       {/* 6. Port Info — white, Chittagong / Mongla / Payra */}
-      <PortInfo />
 
       {/* 7. Certifications — white, accreditations & compliance */}
-      <Certifications />
+      {/* <Certifications /> */}
 
       {/* 8. Why Choose Us — dark navy, benefit cards + FAQ */}
       <WhyChooseUs />
 
       {/* 9. CTA Banner — dramatic full-bleed ship image with contact box */}
-      {/* <CTABanner /> */}
 
+      <PortInfo />
       {/* 10. Contact — white, form + info */}
       <ContactSection />
 

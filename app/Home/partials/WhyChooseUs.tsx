@@ -7,40 +7,65 @@ import {
   Shield,
   Clock,
   Award,
-  Headphones,
   CheckCircle,
   Zap,
+  Anchor,
+  Settings,
 } from "lucide-react";
 
 const WHY_US = [
-  { icon: Clock, title: "24/7 Operations", desc: "Round-the-clock service team ready to respond to any vessel requirement at any hour." },
-  { icon: Shield, title: "Quality Assured", desc: "ISO-compliant processes ensuring every product and service meets international maritime standards." },
-  { icon: Award, title: "Licensed & Certified", desc: "Fully registered with Bangladesh Merchant Shipping Ordinance and port authorities." },
-  { icon: Headphones, title: "Dedicated Support", desc: "A personal account manager assigned to every vessel for seamless coordination." },
-  { icon: Zap, title: "Fast Turnaround", desc: "Express delivery to berth even for last-minute urgent requirements across all ports." },
-  { icon: CheckCircle, title: "Competitive Pricing", desc: "Best market prices with full transparency — no hidden charges or surcharges." },
+  { 
+    icon: Anchor, 
+    title: "Yokohama Fender Experts", 
+    desc: "Specialized providers of high-quality Yokohama Fenders suitable for heavy-duty marine and port applications." 
+  },
+  { 
+    icon: Settings, 
+    title: "Comprehensive Services", 
+    desc: "From underwater hull cleaning to cargo handling, we cover the full spectrum of marine service needs." 
+  },
+  { 
+    icon: Zap, 
+    title: "Flexible Solutions", 
+    desc: "We tailor our services to meet the specific operational requirements of every unique vessel and project." 
+  },
+  { 
+    icon: Shield, 
+    title: "Commitment to Safety", 
+    desc: "Safety is our priority. All equipment and operations meet strict international marine safety standards." 
+  },
+  { 
+    icon: Clock, 
+    title: "24/7 Operations", 
+    desc: "Round-the-clock service team ready to respond to any vessel requirement at any hour across all ports." 
+  },
+  { 
+    icon: CheckCircle, 
+    title: "Competitive Pricing", 
+    desc: "Best market prices with full transparency — ensuring quality without hidden charges or surcharges." 
+  },
 ];
 
 const FAQS = [
   {
-    q: "What types of ship repair services do you offer?",
-    a: "We offer a comprehensive range of ship repair services including main engine overhauling, hull and underwater repairs, electrical system repairs, crane and winch repairs, piping works, and structural steel repairs — all performed by certified marine engineers.",
+    q: "Do you specialize in Yokohama Fenders?",
+    a: "Yes, we are specialists in Yokohama Fenders. We provide high-quality fenders designed to protect vessels and port infrastructure during berthing and ship-to-ship operations.",
   },
   {
-    q: "Do you offer emergency ship repair services?",
-    a: "Yes. Our emergency response team is available 24/7 and can mobilize within hours to handle unexpected breakdown or damage repair needs at any Bangladesh port.",
+    q: "What comprehensive marine services do you offer?",
+    a: "Our range includes underwater hull cleaning, cargo handling, equipment supply, main engine overhauling, and structural repairs performed by certified marine engineers.",
   },
   {
-    q: "What types of ship supply services do you offer?",
-    a: "Our supply services cover provisions, ship stores, bunker, lube oil, marine spare parts, safety equipment, ropes and deck supplies, bond store items, and cleaning chemicals — all sourced from certified suppliers.",
-  },
-  {
-    q: "What certifications and qualifications do your technicians hold?",
-    a: "Our team includes class-approved welders, certified electrical engineers, marine fitters, and experienced superintendents, all with relevant maritime qualifications and continuous training programs.",
+    q: "How do you handle specific project requirements?",
+    a: "We understand that every vessel is different. We offer flexible, tailored solutions that adapt to your specific operational needs and project timelines.",
   },
   {
     q: "Which ports do you operate in?",
-    a: "We currently operate full service at all three major Bangladesh seaports: Port of Chittagong (BDCGP), Port of Mongla (BDMGL), and the new Port of Payra (BDPYR).",
+    a: "We currently operate at all major Bangladesh seaports: Port of Chittagong (BDCGP), Port of Mongla (BDMGL), and the Port of Payra (BDPYR).",
+  },
+  {
+    q: "Are your safety standards certified?",
+    a: "Absolutely. All our equipment and operational procedures are maintained to meet international maritime safety standards and ISO-compliant processes.",
   },
 ];
 
@@ -50,7 +75,7 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative  overflow-hidden py-24 lg:py-32" ref={ref}>
+    <section className="relative overflow-hidden py-24 lg:py-32" ref={ref}>
       {/* Background texture */}
       <div
         className="absolute inset-0 opacity-[0.025]"
@@ -72,17 +97,15 @@ export default function WhyChooseUs() {
         >
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-secondary" />
-            <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Why Aquavibe</span>
+            <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Why Sultan Fleet</span>
             <div className="h-px w-8 bg-secondary" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black  leading-tight">
-            Why Choose{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">
-              Aquavibe?
-            </span>
+          <h2 className="text-4xl md:text-5xl font-black leading-tight">
+            Why Choose Sultan Fleet Serve?
           </h2>
-          <p className="mt-4  text-base max-w-xl mx-auto leading-relaxed">
-            We have built a proven track record of excellence, reliability, and speed across Bangladesh's maritime industry.
+          <p className="mt-4 text-base max-w-xl mx-auto leading-relaxed">
+            Leading the maritime industry in Bangladesh with specialized equipment, 
+            tailored solutions, and an unwavering commitment to safety.
           </p>
         </motion.div>
 
@@ -99,15 +122,15 @@ export default function WhyChooseUs() {
               <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:border-primary/50 transition-colors">
                 <Icon className="w-5 h-5 text-primary" />
               </div>
-              <h4 className="font-bold  text-sm mb-2">{title}</h4>
-              <p className=" text-xs leading-relaxed">{desc}</p>
+              <h4 className="font-bold text-sm mb-2">{title}</h4>
+              <p className="text-xs leading-relaxed text-gray-600">{desc}</p>
             </motion.div>
           ))}
         </div>
 
         {/* FAQ section */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Image */}
+          {/* Left: Stats & Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -116,12 +139,12 @@ export default function WhyChooseUs() {
             <div className="relative rounded-2xl overflow-hidden border border-black/10 shadow-2xl">
               <img
                 src="https://media.base44.com/images/public/69d33c7a3f79b23a0b421b4c/64be7a998_generated_de20fd18.png"
-                alt="Ship engineering excellence"
+                alt="Marine Excellence"
                 className="w-full h-80 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5">
-                <span className="font-mono text-[10px] text-white tracking-widest uppercase">Engineering Excellence</span>
+                <span className="font-mono text-[10px] text-white tracking-widest uppercase">Maritime Excellence</span>
               </div>
             </div>
 
@@ -147,7 +170,7 @@ export default function WhyChooseUs() {
               <div className="h-px w-8 bg-secondary" />
               <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">FAQ</span>
             </div>
-            <h3 className="text-2xl font-black  mb-8">Frequently Asked Questions</h3>
+            <h3 className="text-2xl font-black mb-8">Frequently Asked Questions</h3>
 
             <div className="space-y-3">
               {FAQS.map((faq, i) => (
@@ -167,7 +190,7 @@ export default function WhyChooseUs() {
                       <span className="font-mono text-xs text-secondary flex-shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-semibold text-sm ">{faq.q}</span>
+                      <span className="font-semibold text-sm">{faq.q}</span>
                     </div>
                     <ChevronDown
                       className={`w-4 h-4 text-secondary flex-shrink-0 transition-transform duration-300 ${

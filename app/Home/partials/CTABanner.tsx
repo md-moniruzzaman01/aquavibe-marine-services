@@ -19,7 +19,7 @@ export default function CTABanner() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&q=80&w=1600"
+          src="/banner1.jpg"
           alt="Ship at sea"
           className="w-full h-full object-cover"
         />

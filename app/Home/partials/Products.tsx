@@ -57,13 +57,13 @@ export default function Products() {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #51CFED 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, #e4a04f 1px, transparent 0)`,
           backgroundSize: "48px 48px",
         }}
       />
       {/* Glow accents */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[#004d95]/8 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-[#51CFED]/8 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/8 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-secondary/8 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
@@ -75,12 +75,12 @@ export default function Products() {
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-[#004d95]" />
-              <span className="text-[#004d95] font-mono text-xs tracking-[0.3em] uppercase">Supply Catalog</span>
+              <div className="h-px w-8 bg-primary" />
+              <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">Supply Catalog</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black  leading-tight">
               Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004d95] to-[#51CFED]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 Products
               </span>
             </h2>
@@ -98,23 +98,23 @@ export default function Products() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative bg-[#004d95]/5 hover:bg-[#004d95]/8 border border-[#004d95]/10 hover:border-[#004d95]/40 rounded-2xl p-7 transition-all duration-400 overflow-hidden cursor-pointer"
+              className="group relative bg-primary/5 hover:bg-primary/8 border border-primary/10 hover:border-primary/40 rounded-2xl p-7 transition-all duration-400 overflow-hidden cursor-pointer"
             >
               {/* Glow on hover */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF3E41]/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div className="relative">
                 {/* Tag */}
-                <div className="font-mono text-[9px] text-blue-700 tracking-[0.3em] mb-5 uppercase">
+                <div className="font-mono text-[9px] text-primary tracking-[0.3em] mb-5 uppercase">
                   {product.tag}
                 </div>
 
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-[#004d95]/10 border border-[#004d95]/20 flex items-center justify-center mb-5 group-hover:bg-[#004d95]/20 group-hover:border-[#004d95]/50 transition-all duration-300">
-                  <product.icon className="w-5 h-5 text-[#004d95]" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-300">
+                  <product.icon className="w-5 h-5 text-primary" />
                 </div>
 
-                <h3 className="font-bold  text-base leading-snug mb-3 group-hover:text-[#51CFED] transition-colors">
+                <h3 className="font-bold  text-base leading-snug mb-3 group-hover:text-primary transition-colors">
                   {product.title}
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
@@ -122,14 +122,14 @@ export default function Products() {
                 </p>
 
                 {/* Arrow on hover */}
-                <div className="mt-5 flex items-center gap-2 text-[#004d95] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <div className="mt-5 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                   <span className="font-mono text-[10px] tracking-widest uppercase">Learn More</span>
                   <ArrowRight className="w-3 h-3" />
                 </div>
               </div>
 
               {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#004d95] to-[#51CFED] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
             </motion.div>
           ))}
         </div>
@@ -143,7 +143,7 @@ export default function Products() {
         >
           <a
             href="mailto:aquavibe2023@gmail.com"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#004d95] hover:bg-[#004d95] text-white font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-[#FF3E41]/30"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30"
           >
             Request a Quotation
             <ArrowRight className="w-4 h-4" />

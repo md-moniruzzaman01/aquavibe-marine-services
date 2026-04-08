@@ -10,18 +10,18 @@ const CERTIFICATIONS = [
     title: "Bangladesh Merchant Shipping Ordinance",
     body: "Fully registered and licensed under Bangladesh Merchant Shipping Ordinance, 1983 — authorizing operations across all national seaports.",
     badge: "GOVT. REGISTERED",
-    color: "text-[#FF3E41]",
-    bg: "bg-[#FF3E41]/10",
-    border: "border-[#FF3E41]/20",
+    color: "text-secondary",
+    bg: "bg-secondary/10",
+    border: "border-secondary/20",
   },
   {
     icon: Award,
     title: "ISO Quality Management",
     body: "Our procurement and supply processes follow ISO 9001-compliant quality management principles ensuring consistency and reliability.",
     badge: "ISO COMPLIANT",
-    color: "text-[#51CFED]",
-    bg: "bg-[#51CFED]/10",
-    border: "border-[#51CFED]/20",
+    color: "text-primary",
+    bg: "bg-primary/10",
+    border: "border-primary/20",
   },
   {
     icon: Globe,
@@ -66,13 +66,13 @@ export default function Certifications() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-[#FF3E41]" />
-            <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Accreditations</span>
+            <div className="h-px w-8 bg-secondary" />
+            <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Accreditations</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="text-4xl md:text-5xl font-black text-[#060315] leading-tight max-w-xl">
+            <h2 className="text-4xl md:text-5xl font-black text-dark leading-tight max-w-xl">
               Certified &{" "}
-              <span className="text-[#FF3E41]">Compliant</span>
+              <span className="text-secondary">Compliant</span>
             </h2>
             <p className="text-gray-400 text-sm max-w-sm leading-relaxed font-mono">
               Our operations meet international maritime regulations and quality standards so your vessels always receive compliant, certified supplies.
@@ -103,7 +103,7 @@ export default function Certifications() {
                   <span className={`font-mono text-[9px] ${cert.color} tracking-widest uppercase`}>{cert.badge}</span>
                 </div>
 
-                <h4 className="font-bold text-[#060315] text-sm leading-snug mb-2">{cert.title}</h4>
+                <h4 className="font-bold text-dark text-sm leading-snug mb-2">{cert.title}</h4>
                 <p className="text-gray-400 text-xs leading-relaxed">{cert.body}</p>
               </motion.div>
             ))}
@@ -126,16 +126,16 @@ export default function Certifications() {
                     "https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&q=80&w=800";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060315]/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
               <div className="absolute bottom-4 left-4">
-                <span className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase">International Maritime Compliance</span>
+                <span className="font-mono text-[10px] text-white tracking-widest uppercase">International Maritime Compliance</span>
               </div>
             </div>
 
             <div className=" rounded-2xl p-7 border border-white/5">
               <div className="flex items-center gap-2 mb-5">
-                <Shield className="w-4 h-4 text-[#FF3E41]" />
-                <span className="font-mono text-xs text-[#51CFED] tracking-widest uppercase">Compliance Standards Met</span>
+                <Shield className="w-4 h-4 text-secondary" />
+                <span className="font-mono text-xs text-primary tracking-widest uppercase">Compliance Standards Met</span>
               </div>
               <div className="space-y-3.5">
                 {COMPLIANCE_POINTS.map((point, i) => (
@@ -146,7 +146,7 @@ export default function Certifications() {
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle className="w-4 h-4 text-[#51CFED] flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
                     <span className=" text-sm leading-relaxed">{point}</span>
                   </motion.div>
                 ))}
@@ -161,7 +161,7 @@ export default function Certifications() {
                 { code: "STCW", label: "Crew Standard" },
               ].map(({ code, label }) => (
                 <div key={code} className="text-center py-4 rounded-xl border border-gray-100 bg-gray-50">
-                  <div className="font-black text-[#060315] text-sm">{code}</div>
+                  <div className="font-black text-dark text-sm">{code}</div>
                   <div className="font-mono text-[9px] text-gray-400 tracking-widest uppercase mt-0.5">{label}</div>
                 </div>
               ))}

@@ -74,7 +74,7 @@ function ServiceCard({ service, index, isInView }: ServiceCardProps) {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="group relative rounded-xl overflow-hidden bg-[#004d95] transition-all duration-500 cursor-pointer"
+      className="group relative rounded-xl overflow-hidden bg-primary transition-all duration-500 cursor-pointer"
     >
       <div className="relative h-64 overflow-hidden">
         <img
@@ -82,16 +82,16 @@ function ServiceCard({ service, index, isInView }: ServiceCardProps) {
           alt={service.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#004d95]/30 via-[#004d95]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
         {/* Glassmorphism overlay on hover */}
-        <div className="absolute inset-0 bg-[#004d95]/5 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-primary/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
       
       <div className="p-2.5 pb-3.5 ">
         <div className="font-mono text-[9px] text-white tracking-widest mb-2">
           SRV—{String(index + 1).padStart(3, '0')}
         </div>
-        <h3 className="font-display font-bold text-sm text-white tracking-wider uppercase group-hover:text-primary transition-colors">
+        <h3 className="font-display font-bold text-sm text-white tracking-wider uppercase group-hover:text-secondary transition-colors">
           {service.title}
         </h3>
       </div>

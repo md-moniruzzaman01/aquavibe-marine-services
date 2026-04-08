@@ -147,6 +147,36 @@ export default function Footer() {
           </div>
 
         </div>
+
+        {/* ── Sister Companies ── */}
+        <div className="mt-12 pt-8 border-t border-[#004d95]/10">
+          <h3 className="font-poppins text-[15px] font-semibold text-[#004d95] uppercase mb-6 text-center tracking-wide">
+            Our Sister Companies
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16 opacity-90 hover:opacity-100 transition-opacity">
+            <Image
+              src="/sultan tour and travels .jpg"
+              alt="Sultan Tour and Travels"
+              width={160}
+              height={80}
+              className="h-16 w-auto object-contain hover:scale-105 transition-transform"
+            />
+            <Image
+              src="/logo seaking.jpg"
+              alt="Sea King"
+              width={160}
+              height={80}
+              className="h-16 w-auto object-contain hover:scale-105 transition-transform"
+            />
+            <Image
+              src="/logo taqwa.jpg"
+              alt="Taqwa"
+              width={160}
+              height={80}
+              className="h-16 w-auto object-contain hover:scale-105 transition-transform"
+            />
+          </div>
+        </div>
       </div>
 
       {/* ── Copyright ── */}

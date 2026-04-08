@@ -4,7 +4,7 @@ import { Ship, MapPin, Anchor, Wrench, Package } from "lucide-react";
 
 export default function ShippingSection() {
   return (
-    <section className="relative bg-[#F8F2F0] py-28 px-6 lg:px-16 overflow-hidden">
+    <section className="relative  py-28 px-6 lg:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* ===== TOP HEADING (CENTERED - PREMIUM) ===== */}

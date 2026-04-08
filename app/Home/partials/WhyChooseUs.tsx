@@ -59,8 +59,8 @@ export default function WhyChooseUs() {
           backgroundSize: "32px 32px",
         }}
       />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-blue-700/5 blur-3xl pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-700/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
@@ -71,13 +71,13 @@ export default function WhyChooseUs() {
           className="mb-16 text-center"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-[#FF3E41]" />
-            <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Why Aquavibe</span>
-            <div className="h-px w-8 bg-[#FF3E41]" />
+            <div className="h-px w-8 bg-secondary" />
+            <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Why Aquavibe</span>
+            <div className="h-px w-8 bg-secondary" />
           </div>
           <h2 className="text-4xl md:text-5xl font-black  leading-tight">
             Why Choose{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3E41] to-[#51CFED]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">
               Aquavibe?
             </span>
           </h2>
@@ -94,10 +94,10 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group bg-black/5 hover:bg-black/8 border border-white/10 hover:border-[#004d95]/30 rounded-2xl p-6 transition-all duration-300"
+              className="group bg-gray-50 hover:bg-gray-100 border border-gray-100 hover:border-primary/20 rounded-2xl p-6 transition-all duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-[#004d95]/10 border border-[#004d95]/20 flex items-center justify-center mb-4 group-hover:border-[#004d95]/50 transition-colors">
-                <Icon className="w-5 h-5 text-[#51CFED]" />
+              <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:border-primary/50 transition-colors">
+                <Icon className="w-5 h-5 text-primary" />
               </div>
               <h4 className="font-bold  text-sm mb-2">{title}</h4>
               <p className=" text-xs leading-relaxed">{desc}</p>
@@ -119,20 +119,20 @@ export default function WhyChooseUs() {
                 alt="Ship engineering excellence"
                 className="w-full h-80 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060315]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5">
-                <span className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase">Engineering Excellence</span>
+                <span className="font-mono text-[10px] text-white tracking-widest uppercase">Engineering Excellence</span>
               </div>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-4">
-              <div className="bg-[#FF3E41]/10 border border-[#FF3E41]/20 rounded-xl p-5">
-                <div className="text-3xl font-black text-[#FF3E41] mb-1">500+</div>
-                <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase">Vessels Served</div>
+              <div className="bg-secondary/10 border border-secondary/20 rounded-xl p-5">
+                <div className="text-3xl font-black text-secondary mb-1">500+</div>
+                <div className="font-mono text-[10px] text-gray-500 tracking-widest uppercase">Vessels Served</div>
               </div>
-              <div className="bg-[#004d95]/10 border border-[#51CFED]/20 rounded-xl p-5">
-                <div className="text-3xl font-black text-[#51CFED] mb-1">3</div>
-                <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase">Active Ports</div>
+              <div className="bg-primary/10 border border-primary/20 rounded-xl p-5">
+                <div className="text-3xl font-black text-primary mb-1">3</div>
+                <div className="font-mono text-[10px] text-gray-500 tracking-widest uppercase">Active Ports</div>
               </div>
             </div>
           </motion.div>
@@ -144,8 +144,8 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#FF3E41]" />
-              <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">FAQ</span>
+              <div className="h-px w-8 bg-secondary" />
+              <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">FAQ</span>
             </div>
             <h3 className="text-2xl font-black  mb-8">Frequently Asked Questions</h3>
 
@@ -155,8 +155,8 @@ export default function WhyChooseUs() {
                   key={i}
                   className={`rounded-xl border transition-all duration-300 ${
                     openIndex === i
-                      ? "border-[#FF3E41]/40 bg-black/8"
-                      : "border-white/10 bg-black/5"
+                      ? "border-secondary/40 bg-gray-50"
+                      : "border-gray-200 bg-gray-50/50 hover:bg-gray-50"
                   }`}
                 >
                   <button
@@ -164,13 +164,13 @@ export default function WhyChooseUs() {
                     className="w-full flex items-center justify-between gap-4 p-5 text-left"
                   >
                     <div className="flex items-center gap-4">
-                      <span className="font-mono text-xs text-[#FF3E41] flex-shrink-0">
+                      <span className="font-mono text-xs text-secondary flex-shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="font-semibold text-sm ">{faq.q}</span>
                     </div>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#FF3E41] flex-shrink-0 transition-transform duration-300 ${
+                      className={`w-4 h-4 text-secondary flex-shrink-0 transition-transform duration-300 ${
                         openIndex === i ? "rotate-180" : ""
                       }`}
                     />
@@ -186,7 +186,7 @@ export default function WhyChooseUs() {
                         className="overflow-hidden"
                       >
                         <div className="px-5 pb-5 pl-16">
-                          <p className="text-sm text-white/50 leading-relaxed">{faq.a}</p>
+                          <p className="text-sm text-gray-500 leading-relaxed">{faq.a}</p>
                         </div>
                       </motion.div>
                     )}

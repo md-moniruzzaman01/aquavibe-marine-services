@@ -1,8 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aquavibe Marine Services
 
-## Getting Started
+A premium maritime logistics and supply provider website built with Next.js 16 (App Router), React 19, and Tailwind CSS v4.
 
-First, run the development server:
+## 🚢 Overview
+
+Aquavibe Marine Services (operates as Sultan Fleet Serves) is a leading ship chandler in Bangladesh, supplying vessels calling at the major ports of Chittagong, Mongla, and Payra. 
+
+This repository contains the front-end codebase for their corporate website which is designed to convert fleet managers, vessel masters, and maritime companies by visually projecting trust, reliability, and engineering excellence. It uses a custom-developed premium nautical theme.
+
+### Key Features
+- **Premium Maritime Theme:** A cohesive, customized branding system implementing a tailored dark navy (`primary`: `#08214a`) and gold accent (`secondary`: `#e4a04f`) color palette.
+- **Dynamic Animations:** Graceful entrance and scroll animations powered by Framer Motion. 
+- **Modern UI Paradigms:** Employs glassmorphism, responsive grids, continuous marquee banners, and interactive hover states.
+- **Micro-interactions:** Custom hover state text logic and dynamic layout behaviors to maintain visual clarity on both light backgrounds and dark overlays.
+
+## 🛠 Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (v16.2.2 with App Router)
+- **UI & Styling:** [Tailwind CSS](https://tailwindcss.com/) (v4), `clsx`, `tailwind-merge`
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) (v12)
+- **Icons:** [Lucide React](https://lucide.dev/), `react-icons`
+- **Components:** `embla-carousel-react` for Hero sliders and marquees.
+- **Language:** TypeScript 
+
+## 🚀 Getting Started
+
+To run the development server locally:
+
+1. Copy `.env.local.example` to `.env.local` and add relevant keys (if necessary).
+2. Install the application dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Launch the development server:
 
 ```bash
 npm run dev
@@ -10,27 +46,24 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Design System Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The global design system colors are implemented via Tailwind CSS v4's modern CSS variables injected into global scope. 
 
-## Learn More
+Modifying the look and feel can be done by editing `tailwind.config.ts`, where the core utility arrays reside. The site aggressively avoids legacy specific hex codes scattered in TSX files in favor of standard `bg-primary`, `text-secondary` semantic classnames.
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Key directories:
+- `/app` — Next.js 16 App Router foundation (`page.tsx`, `layout.tsx`, global CSS).
+- `/app/Home/partials` — Reusable front-page components (`HeroSlider`, `AboutSection`, `ProductsSection`, `WhyChooseUs`, `ContactUs`, etc.)
+- `/components` — Shared generic UI components (Header, Footer, Navigation wrappers).
+- `/public` — Static assets, images, and fonts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Designed and developed for Aquavibe Marine Services. All rights reserved.

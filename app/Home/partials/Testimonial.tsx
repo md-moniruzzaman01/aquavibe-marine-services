@@ -67,17 +67,17 @@ export default function TestimonialSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative  overflow-hidden py-24 lg:py-32" ref={ref}>
+    <section className="relative overflow-hidden py-24 lg:py-32 bg-primary text-white" ref={ref}>
       {/* Background */}
       <div
         className="absolute inset-0 opacity-[0.025]"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #51CFED 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, #e4a04f 1px, transparent 0)`,
           backgroundSize: "40px 40px",
         }}
       />
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#004d95]/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#004d95]/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-secondary/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-secondary/10 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
@@ -88,13 +88,13 @@ export default function TestimonialSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-[#FF3E41]" />
-            <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Testimonials</span>
-            <div className="h-px w-8 bg-[#FF3E41]" />
+            <div className="h-px w-8 bg-secondary" />
+            <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Testimonials</span>
+            <div className="h-px w-8 bg-secondary" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black  leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
             What Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3E41] to-[#51CFED]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white">
               Clients Say
             </span>
           </h2>
@@ -111,7 +111,7 @@ export default function TestimonialSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative  hover:bg-white/8 border border-white/10 hover:border-[#FF3E41]/30 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
+              className="group relative hover:bg-white/10 border border-white/10 hover:border-secondary/30 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
             >
               {/* Large quote icon bg */}
               <Quote className="absolute top-4 right-5 w-16 h-16 text-white/3 rotate-180" />
@@ -119,7 +119,7 @@ export default function TestimonialSection() {
               {/* Stars */}
               <div className="flex gap-1 mb-5">
                 {Array.from({ length: item.rating }).map((_, j) => (
-                  <Star key={j} className="w-3.5 h-3.5 fill-[#FF3E41] text-[#FF3E41]" />
+                  <Star key={j} className="w-3.5 h-3.5 fill-secondary text-secondary" />
                 ))}
               </div>
 
@@ -131,8 +131,8 @@ export default function TestimonialSection() {
               {/* Client info */}
               <div className="flex items-center gap-4">
                 {/* Avatar with initials */}
-                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#FF3E41] to-[#51CFED] flex items-center justify-center flex-shrink-0">
-                  <span className=" font-black text-xs">{item.initials}</span>
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-secondary/80 to-white/20 flex items-center justify-center flex-shrink-0 text-white">
+                  <span className="font-black text-xs">{item.initials}</span>
                 </div>
                 <div>
                   <div className="font-bold  text-sm">{item.name}</div>
@@ -141,14 +141,14 @@ export default function TestimonialSection() {
                   </div>
                 </div>
                 <div className="ml-auto">
-                  <div className="text-right px-3 py-1 rounded-full bg-[#004d95]/10 border border-[#51CFED]/20">
-                    <span className="font-mono text-[9px] text-[#51CFED] tracking-widest uppercase">{item.port}</span>
+                  <div className="text-right px-3 py-1 rounded-full bg-white/10 border border-secondary/20">
+                    <span className="font-mono text-[9px] text-white tracking-widest uppercase">{item.port}</span>
                   </div>
                 </div>
               </div>
 
               {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#FF3E41] to-[#51CFED] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-secondary to-white/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
             </motion.div>
           ))}
         </div>

@@ -15,15 +15,16 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Aquavibe Marine Services",
+    name: "Sultan Fleet Serves",
     description:
       "Leading ship chandler in Bangladesh supplying marine spare parts, lube oil, bunker, provisions, ship stores and repair services.",
-    url: "https://aquavibemarineservices.com",
-    telephone: "+8801728841299",
-    email: "aquavibe2023@gmail.com",
+    url: "https://sultanfleetserve.com",
+    telephone: "+8801624434052",
+    email: "sultanfleetserve@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "6th floor, 146/A Simla House, Agrabad",
+      streetAddress:
+        "Sultan Fleet Serve, Oriyent Building, 3 No. Fakirhat Bandar",
       addressLocality: "Chittagong",
       postalCode: "4100",
       addressCountry: "BD",
@@ -65,8 +66,8 @@ export default function HomePage() {
       <ClientsBanner />
 
       {/* 2. About — dark navy, stats + split layout */}
-      {/* <AboutModern /> */}
-      <AboutSection />
+      <AboutModern />
+      {/* <AboutSection /> */}
       {/* 4. Services — white, 12-card grid */}
       <ServicesSection />
 
@@ -74,17 +75,16 @@ export default function HomePage() {
       <Products />
 
       {/* 6. Port Info — white, Chittagong / Mongla / Payra */}
-      <PortInfo />
 
       {/* 7. Certifications — white, accreditations & compliance */}
-      <Certifications />
+      {/* <Certifications /> */}
 
       {/* 8. Why Choose Us — dark navy, benefit cards + FAQ */}
       <WhyChooseUs />
 
       {/* 9. CTA Banner — dramatic full-bleed ship image with contact box */}
-      {/* <CTABanner /> */}
 
+      <PortInfo />
       {/* 10. Contact — white, form + info */}
       <ContactSection />
 

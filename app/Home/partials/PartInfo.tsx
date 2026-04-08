@@ -53,12 +53,12 @@ export default function PortInfo() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-[#FF3E41]" />
-            <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Service Coverage</span>
+            <div className="h-px w-8 bg-secondary" />
+            <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Service Coverage</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#060315] leading-tight max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-black text-dark leading-tight max-w-2xl">
             Ports We{" "}
-            <span className="text-[#FF3E41]">Operate In</span>
+            <span className="text-secondary">Operate In</span>
           </h2>
           <p className="mt-4 text-gray-500 text-base max-w-xl leading-relaxed">
             Our operations span all three major seaports in Bangladesh with dedicated teams on ground for fast, efficient vessel turnaround.
@@ -80,7 +80,7 @@ export default function PortInfo() {
                 alt="Port of Chittagong Bangladesh"
                 className="w-full h-72 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060315]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent" />
 
               {/* Coordinate pills */}
               <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
@@ -94,7 +94,7 @@ export default function PortInfo() {
                     key={label}
                     className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/10"
                   >
-                    <Icon className="w-3 h-3 text-[#51CFED]" />
+                    <Icon className="w-3 h-3 text-secondary" />
                     <span className="font-mono text-[10px] text-white">{label}</span>
                   </div>
                 ))}
@@ -102,10 +102,10 @@ export default function PortInfo() {
             </div>
 
             {/* Specifications table */}
-            <div className="bg-white rounded-2xl p-6 border border-[#51CFED]/5">
+            <div className="bg-white rounded-2xl p-6 border border-primary/10">
               <div className="flex items-center gap-2 mb-5">
-                <Anchor className="w-4 h-4 text-[#FF3E41]" />
-                <span className="font-mono text-xs text-[#51CFED] tracking-widest uppercase">Port Specifications</span>
+                <Anchor className="w-4 h-4 text-secondary" />
+                <span className="font-mono text-xs text-primary tracking-widest uppercase">Port Specifications</span>
               </div>
               <div className="space-y-3">
                 {PORT_SPECS.map(({ label, value }) => (
@@ -135,20 +135,20 @@ export default function PortInfo() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                className="group relative bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-[#FF3E41]/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                className="group relative bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-secondary/30 transition-all duration-300 overflow-hidden cursor-pointer"
               >
                 {/* Number */}
-                <div className="absolute top-4 right-5 font-black text-7xl text-gray-50 leading-none select-none group-hover:text-[#FF3E41]/5 transition-colors">
+                <div className="absolute top-4 right-5 font-black text-7xl text-gray-50 leading-none select-none group-hover:text-secondary/10 transition-colors">
                   {String(i + 1).padStart(2, "0")}
                 </div>
 
                 <div className="relative">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <div className="font-black text-xl text-[#060315] group-hover:text-[#FF3E41] transition-colors">
+                      <div className="font-black text-xl text-dark group-hover:text-secondary transition-colors">
                         {port.name}
                       </div>
-                      <div className="font-mono text-[10px] text-[#51CFED] tracking-widest mt-0.5">{port.code}</div>
+                      <div className="font-mono text-[10px] text-primary tracking-widest mt-0.5">{port.code}</div>
                     </div>
                     <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 border border-green-200">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -158,14 +158,14 @@ export default function PortInfo() {
                   <p className="text-gray-500 text-sm leading-relaxed">{port.desc}</p>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FF3E41] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
               </motion.div>
             ))}
 
             {/* Coordinates highlight */}
-            <div className="bg-gradient-to-r from-[#FF3E41]/10 to-[#51CFED]/10 border border-[#FF3E41]/20 rounded-2xl p-5">
-              <div className="font-mono text-[10px] text-[#FF3E41] tracking-widest uppercase mb-2">Chittagong HQ Coordinates</div>
-              <div className="font-black text-[#060315] text-sm">N 22° 16′ 22.79″ — E 091° 49′ 55.20″</div>
+            <div className="bg-gradient-to-r from-secondary/10 to-primary/5 border border-secondary/20 rounded-2xl p-5">
+              <div className="font-mono text-[10px] text-secondary tracking-widest uppercase mb-2">Chittagong HQ Coordinates</div>
+              <div className="font-black text-dark text-sm">N 22° 16′ 22.79″ — E 091° 49′ 55.20″</div>
               <div className="text-gray-500 text-xs mt-1">6th Floor, 146/A Simla House, Agrabad, Chittagong 4100, Bangladesh</div>
             </div>
           </motion.div>

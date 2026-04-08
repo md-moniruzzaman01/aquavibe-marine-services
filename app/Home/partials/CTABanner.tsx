@@ -19,12 +19,12 @@ export default function CTABanner() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&q=80&w=1600"
+          src="/banner1.jpg"
           alt="Ship at sea"
           className="w-full h-full object-cover"
         />
         {/* Dual overlay: brand color + dark */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060315]/95 via-[#060315]/85 to-[#FF3E41]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-secondary/60" />
         {/* Dot grid texture */}
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -44,12 +44,12 @@ export default function CTABanner() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-8 bg-[#FF3E41]" />
-              <span className="text-[#FF3E41] font-mono text-xs tracking-[0.3em] uppercase">Ready to Supply?</span>
+              <div className="h-px w-8 bg-secondary" />
+              <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Ready to Supply?</span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
               Your Vessel.{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3E41] to-[#51CFED]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white">
                 Our Priority.
               </span>
             </h2>
@@ -66,7 +66,7 @@ export default function CTABanner() {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle className="w-4 h-4 text-[#51CFED] flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0" />
                   <span className="text-white/80 text-sm">{pt}</span>
                 </motion.div>
               ))}
@@ -75,7 +75,7 @@ export default function CTABanner() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="mailto:aquavibe2023@gmail.com"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF3E41] hover:bg-[#e63538] text-white font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-[#FF3E41]/40 group"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary hover:bg-secondary/90 text-white font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-secondary/40 group"
               >
                 Request a Quote
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -84,7 +84,7 @@ export default function CTABanner() {
                 href="https://wa.me/+8801728841299"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-[#51CFED] text-white hover:text-[#51CFED] font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-secondary text-white hover:text-secondary font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 backdrop-blur-sm"
               >
                 WhatsApp Us
               </a>
@@ -110,20 +110,20 @@ export default function CTABanner() {
 
               <div className="space-y-5">
                 <div>
-                  <div className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase mb-1">Emergency Hotline</div>
-                  <a href="tel:+8801728841299" className="text-white font-black text-2xl hover:text-[#FF3E41] transition-colors">
+                  <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-1">Emergency Hotline</div>
+                  <a href="tel:+8801728841299" className="text-white font-black text-2xl hover:text-secondary transition-colors">
                     +880 1728 841299
                   </a>
                 </div>
                 <div>
-                  <div className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase mb-1">Secondary Line</div>
-                  <a href="tel:+8801521387459" className="text-white font-bold text-lg hover:text-[#FF3E41] transition-colors">
+                  <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-1">Secondary Line</div>
+                  <a href="tel:+8801521387459" className="text-white font-bold text-lg hover:text-secondary transition-colors">
                     +880 1521 387459
                   </a>
                 </div>
                 <div>
-                  <div className="font-mono text-[10px] text-[#51CFED] tracking-widest uppercase mb-1">Email</div>
-                  <a href="mailto:aquavibe2023@gmail.com" className="text-white/80 text-sm hover:text-[#51CFED] transition-colors">
+                  <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-1">Email</div>
+                  <a href="mailto:aquavibe2023@gmail.com" className="text-white/80 text-sm hover:text-secondary transition-colors">
                     aquavibe2023@gmail.com
                   </a>
                 </div>

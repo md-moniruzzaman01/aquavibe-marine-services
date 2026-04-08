@@ -18,14 +18,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // ── Core ──────────────────────────────────────────────────────────────
   title: {
-    default: "Aquavibe Marine Services – Best Ship Spare Parts Supplier in BD",
-    template: "%s | Aquavibe Marine Services",
+    default: "Sultan Fleet Serves – Best Ship Spare Parts Supplier in BD",
+    template: "%s | Sultan Fleet Serves",
   },
   description:
-    "Aquavibe Marine Services is Bangladesh's leading ship chandler. We supply marine spare parts, lube oil, bunker, provisions & ship stores across Chittagong, Mongla & Payra ports. 24/7 service.",
+    "Sultan Fleet Serves is Bangladesh's leading ship chandler. We supply marine spare parts, lube oil, bunker, provisions & ship stores across Chittagong, Mongla & Payra ports. 24/7 service.",
 
   // ── Canonical & Base URL ──────────────────────────────────────────────
-  metadataBase: new URL("https://aquavibemarineservices.com"),
+  metadataBase: new URL("https://sultanfleetserve.com"),
   alternates: {
     canonical: "/",
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   // ── Open Graph ────────────────────────────────────────────────────────
   openGraph: {
     type: "website",
-    url: "https://aquavibemarineservices.com",
+    url: "https://sultanfleetserve.com",
     siteName: "Aquavibe Marine Services",
     title: "Aquavibe Marine Services – Best Ship Spare Parts Supplier in BD",
     description:
@@ -99,18 +99,18 @@ export const metadata: Metadata = {
     other: [
       {
         rel: "icon",
-        url: "https://aquavibemarineservices.com/wp-content/uploads/2024/06/Untitled-design-5-150x150.png",
+        url: "sultanfleetserve.com/favicon.png",
         sizes: "32x32",
       },
     ],
   },
 
   // ── App Info ──────────────────────────────────────────────────────────
-  applicationName: "Aquavibe Marine Services",
+  applicationName: "Sultan Fleet Serves",
   authors: [
     {
-      name: "Aquavibe Marine Services",
-      url: "https://aquavibemarineservices.com",
+      name: "Sultan Fleet Serve s",
+      url: "https://sultanfleetserve.com",
     },
   ],
   generator: "Next.js",

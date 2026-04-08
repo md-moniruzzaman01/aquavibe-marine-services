@@ -80,12 +80,12 @@ export default function ProductsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative p-8 rounded-xl border border-border bg-[#004d95]/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-500"
+              className="group relative p-8 rounded-xl border border-border bg-primary/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-500"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#004d95] rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-lg border border-[#004d95]/20 flex items-center justify-center mb-6 group-hover:border-[#004d95]/40 bg-gray-100">
-                  <product.icon className="w-5 h-5 text-[#004d95] " />
+                <div className="w-12 h-12 rounded-lg border border-primary/20 flex items-center justify-center mb-6 group-hover:border-primary/40 bg-gray-100">
+                  <product.icon className="w-5 h-5 text-primary " />
                 </div>
                 <div className="font-mono text-[9px] text-primary/50 tracking-widest mb-2">
                   PRD—{String(i + 1).padStart(3, "0")}

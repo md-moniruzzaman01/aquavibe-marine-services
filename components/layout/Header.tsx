@@ -54,7 +54,7 @@ export default function Header() {
         <div className="max-w-[1222px] mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/">
             <Image
-              src="https://aquavibemarineservices.com/wp-content/uploads/2024/06/Untitled-design-1-min.png"
+              src="/logo sfs.jpg"
               alt="logo"
               width={287}
               height={80}
@@ -71,7 +71,7 @@ export default function Header() {
           </div>
 
           <button
-            className="lg:hidden text-[#004d95] font-bold"
+            className="lg:hidden text-primary font-bold"
             onClick={() => setMobileOpen(true)}
           >
             ☰ Menu
@@ -80,7 +80,7 @@ export default function Header() {
       </div>
 
             {/* ── Desktop Nav ── */}
-      <nav className="bg-[#004d95]">
+      <nav className="bg-primary">
         <div className="max-w-[1222px] mx-auto px-4">
           <ul className="hidden lg:flex items-center justify-center">
             {NAV.map((item) => (

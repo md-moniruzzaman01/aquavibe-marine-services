@@ -14,62 +14,62 @@ const services: Service[] = [
   {
     title: "Marine Fender Supply",
     image: "/services/2-min-2.png",
-    desc: "Premium quality marine fenders for vessel protection during berthing and mooring operations.",
+    desc: "High-quality marine fenders ensuring vessel safety during berthing operations.",
   },
   {
     title: "Crane Grab Rental",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=600",
-    desc: "Professional crane and grab equipment rental services for port and vessel cargo operations.",
+    desc: "Reliable crane and grab equipment for efficient cargo handling operations.",
   },
   {
     title: "Ship Repair & Maintenance",
     image: "/services/1-min-2.png",
-    desc: "Comprehensive ship repair, hull maintenance and overhaul services by certified marine engineers.",
+    desc: "Comprehensive repair and maintenance services by certified marine engineers.",
   },
   {
     title: "Bunker Supply",
     image: "/services/7-min.png",
-    desc: "Reliable physical bunker and lubricant supply across all major Bangladesh ports 24/7.",
+    desc: "24/7 bunker fuel and lubricant supply across all major ports.",
   },
   {
     title: "Provision Supply",
     image: "/services/4-min.png",
-    desc: "Fresh and preserved food provision supply meeting international maritime health standards.",
+    desc: "Fresh and preserved provisions meeting global maritime standards.",
   },
   {
     title: "Bond Store Supply",
     image: "/services/5-min.png",
-    desc: "Customs-bonded ship store supply including duty-free goods and consumables for vessels.",
+    desc: "Duty-free bonded stores and consumables delivered directly to vessels.",
   },
   {
     title: "Ship Store Supply",
     image: "/services/6-min.png",
-    desc: "Full range of deck, engine room and cabin stores delivered directly to your vessel.",
+    desc: "Complete deck, engine, and cabin store supply solutions.",
   },
   {
     title: "Cleaning Services",
     image: "/services/8-min.png",
-    desc: "Professional vessel cleaning, tank cleaning and environmental compliance services.",
+    desc: "Professional vessel and tank cleaning with environmental compliance.",
   },
   {
     title: "Security Services",
     image: "/services/10-min.png",
-    desc: "Trained maritime security personnel and port security services for vessel protection.",
+    desc: "Certified maritime security personnel ensuring vessel protection.",
   },
   {
     title: "Repairing Services",
     image: "/services/11.png",
-    desc: "Expert repair services for mechanical, electrical and structural vessel components.",
+    desc: "Mechanical, electrical, and structural repair solutions.",
   },
   {
     title: "Marine Lube Oil",
     image: "/services/12.png",
-    desc: "Genuine marine lubricants from top brands ensuring optimal engine performance.",
+    desc: "Premium marine lubricants for optimal engine performance.",
   },
   {
     title: "Crane Spare Parts",
     image: "/services/BOND-STORE-SUPPLY.png",
-    desc: "Ship crane repair and comprehensive spare parts supply for all crane types and brands.",
+    desc: "Spare parts and repair solutions for all crane systems.",
   },
 ];
 
@@ -78,32 +78,43 @@ const ServicesSection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="services" className="bg-white py-24 lg:py-32" ref={ref}>
+    <section
+      id="services"
+      className="bg-white py-28 lg:py-32"
+      ref={ref}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
+
+        {/* ===== HEADER (MATCH PREVIOUS SECTION) ===== */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="max-w-2xl mb-16"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-blue-700" />
-            <span className="text-blue-700 font-mono text-xs tracking-[0.3em] uppercase">What We Offer</span>
+          <p className="text-sm text-[#08214a] font-semibold uppercase tracking-[0.3em] mb-3">
+            Our Services
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-[1.05] tracking-tight text-[#1d2128]">
+            Comprehensive Maritime
+            <br />
+            Service Solutions
+          </h2>
+
+          <div className="mt-6 flex items-center gap-3">
+            <div className="h-0.5 w-16 bg-[#e4a04f]" />
+            <div className="h-0.5 w-6 bg-gray-300" />
           </div>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="text-4xl md:text-5xl font-black text-[#060315] leading-tight max-w-xl">
-              OUR {" "}
-              <span className="text-blue-700">SERVICES</span>
-            </h2>
-            <p className="text-gray-500 text-base max-w-md leading-relaxed">
-              Comprehensive ship chandling and maritime services delivered across all major ports in Bangladesh — 24 hours a day, 7 days a week.
-            </p>
-          </div>
-          <div className="mt-8 h-px w-full bg-gray-100" />
+
+          <p className="mt-6 text-gray-600 leading-relaxed">
+            We deliver reliable ship chandling, logistics, and marine support
+            services across all major ports in Bangladesh — ensuring efficiency,
+            safety, and operational excellence.
+          </p>
         </motion.div>
 
-        {/* Grid */}
+        {/* ===== GRID ===== */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service, index) => (
             <motion.div
@@ -111,39 +122,38 @@ const ServicesSection: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-[#FF3E41]/20 transition-all duration-400 cursor-pointer"
+              className="group relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300"
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden bg-gray-50">
+              <div className="relative h-44 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src =
-                      "https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&q=80&w=600";
-                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060315]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
-                {/* Hover icon */}
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#FF3E41] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition" />
+
+                {/* Icon */}
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#08214a] flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                   <ArrowUpRight className="w-4 h-4 text-white" />
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-5">
-                <h4 className="font-bold text-[#060315] text-sm leading-snug mb-2 group-hover:text-[#FF3E41] transition-colors">
+                <h4 className="font-semibold text-[#1d2128] text-sm mb-2 group-hover:text-[#08214a] transition">
                   {service.title}
                 </h4>
+
                 <p className="text-gray-500 text-xs leading-relaxed line-clamp-2">
                   {service.desc}
                 </p>
               </div>
 
-              {/* Bottom accent bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FF3E41] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+              {/* Bottom Accent */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#e4a04f] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </motion.div>
           ))}
         </div>

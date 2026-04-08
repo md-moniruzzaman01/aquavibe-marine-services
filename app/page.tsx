@@ -65,8 +65,8 @@ export default function HomePage() {
       <ClientsBanner />
 
       {/* 2. About — dark navy, stats + split layout */}
-      {/* <AboutModern /> */}
-      <AboutSection />
+      <AboutModern />
+      {/* <AboutSection /> */}
       {/* 4. Services — white, 12-card grid */}
       <ServicesSection />
 

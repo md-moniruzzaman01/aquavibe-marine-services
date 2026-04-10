@@ -9,24 +9,24 @@ const CONTACT_CARDS = [
     icon: Phone,
     title: "Call Us",
     desc: "24/7 Available",
-    action: "tel:+8801728841299",
-    label: "+880 1728 841299",
+    action: "tel:+8801624434052",
+    label: "+880 1624 434052",
     color: "from-secondary to-orange-500",
   },
   {
     icon: Mail,
     title: "Email Us",
     desc: "We reply within 2 hours",
-    action: "mailto:aquavibe2023@gmail.com",
-    label: "aquavibe2023@gmail.com",
+    action: "mailto:sultanfleetserve@gmail.com",
+    label: "sultanfleetserve@gmail.com",
     color: "from-primary to-blue-800",
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
     desc: "Quick messaging support",
-    action: "https://wa.me/+8801728841299",
-    label: "+880 1728 841299",
+    action: "https://wa.me/+8801624434052",
+    label: "+880 1624 434052",
     color: "from-green-500 to-green-600",
   },
 ];
@@ -95,7 +95,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative  border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group relative border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               {/* Gradient bar at top */}
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${card.color}`} />
@@ -121,7 +121,7 @@ export default function ContactSection() {
           >
             <div className=" rounded-2xl p-8 border border-white/5 shadow-2xl">
               <div className="font-mono text-[10px] text-primary tracking-widest uppercase mb-1">Send Message</div>
-              <h3 className="font-bold text-xl  mb-6">Request a Service</h3>
+              <h3 className="font-bold text-xl mb-6">Request a Service</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -131,7 +131,7 @@ export default function ContactSection() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-black/5 border border-black/10 focus:border-secondary/50  text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
+                      className="w-full bg-black/5 border border-black/10 focus:border-secondary/50 text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
                       placeholder="Full Name"
                     />
                   </div>
@@ -164,7 +164,7 @@ export default function ContactSection() {
                       value={form.port}
                       onChange={(e) => setForm({ ...form, port: e.target.value })}
                       className="w-full bg-black/5 border border-black/10 focus:border-secondary/50 text-black text-sm rounded-xl px-4 py-3 outline-none transition-colors placeholder:text-black/20"
-                      placeholder="Chittagong / Mongla / Payra"
+                      placeholder="Chattogram / Mongla / Payra"
                     />
                   </div>
                 </div>
@@ -219,20 +219,21 @@ export default function ContactSection() {
                   <MapPin className="w-4 h-4 text-secondary" />
                 </div>
                 <div>
-                  <div className="font-bold text-dark text-sm mb-1">Aquavibe Marine Services</div>
+                  <div className="font-bold text-dark text-sm mb-1">Sultan Fleet Serve</div>
                   <p className="text-gray-500 text-sm leading-relaxed">
-                    6th Floor, 146/A Simla House,<br />
-                    Agrabad, Chittagong 4100,<br />
+                    Oriyent Building, 3 No. Fakirhat<br />
+                    Bandar, Chattogram – 4100,<br />
                     Bangladesh
                   </p>
                 </div>
               </div>
               <div className="space-y-2.5">
                 {[
-                  { label: "Phone 1", value: "+880 1728 841299" },
-                  { label: "Phone 2", value: "+880 1521 387459" },
-                  { label: "Email", value: "aquavibe2023@gmail.com" },
-                  { label: "WhatsApp", value: "+880 1728 841299" },
+                  { label: "Phone 1", value: "+880 1624 434052" },
+                  { label: "Phone 2", value: "+880 1974 434052" },
+                  { label: "Email 1", value: "sultanfleetserve@gmail.com" },
+                  { label: "Email 2", value: "smturzo@gmail.com" },
+                  { label: "WhatsApp", value: "+880 1624 434052" },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex justify-between items-center py-2 border-b border-gray-50 last:border-0">
                     <span className="font-mono text-[10px] text-gray-400 tracking-wider uppercase">{label}</span>
@@ -260,7 +261,7 @@ export default function ContactSection() {
             <div className="border border-secondary/20 bg-primary/5 rounded-2xl p-5">
               <div className="font-mono text-[10px] text-secondary tracking-widest uppercase mb-3">Service Ports</div>
               <div className="grid grid-cols-3 gap-2">
-                {["Chittagong", "Mongla", "Payra"].map((port) => (
+                {["Chattogram", "Mongla", "Payra"].map((port) => (
                   <div key={port} className="text-center py-2.5 rounded-xl bg-white border border-primary/10">
                     <div className="font-bold text-dark text-[11px]">{port}</div>
                   </div>

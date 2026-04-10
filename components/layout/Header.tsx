@@ -4,27 +4,33 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+// Updated to match your data objects
 const PRODUCTS = [
-  { label: "Yokohama fender", href: "/" },
-  { label: "Auto 10 cbm / 12 cbm remote control grab supply", href: "/" },
-  { label: "Spare parts supply", href: "/" },
-  { label: "Bolt seal ,12 inch wire seal", href: "/" },
-  { label: "32 inch 62 inch wire seal", href: "/" },
+  { label: "All Products", href: "/products" },
+  { label: "Yokohama Pneumatic Fender", href: "/products/yokohama-fender" },
+  { label: "Remote Control Grab Bucket", href: "/products/remote-control-grab" },
+  { label: "Marine Spare Parts Supply", href: "/products/spare-parts-supply" },
+  { label: "Excavator Rental & Supply", href: "/products/excavator-supply" },
 ];
+
+// Updated to match your data objects
 const SERVICES = [
-  { label: "Marine Equipment & Products", href: "/" },
-  { label: "Boat Service (Chattogram Port)", href: "/" },
-  { label: "Spare Parts Supply", href: "/" },
-  { label: "Marine Engine Servicing", href: "/" },
+  { label: "All Services", href: "/services" },
+  { label: "Marine Boat & Logistics", href: "/services/boat-service" },
+  { label: "Underwater Hull Cleaning", href: "/services/hull-cleaning" },
+  { label: "Cargo Hold Cleaning", href: "/services/cargo-hold-cleaning" },
+  { label: "Grab Repair & Maintenance", href: "/services/grab-repair" },
+  { label: "Crane Repair & Maintenance", href: "/services/crane-repair" },
+  { label: "Main Engine Repair & Overhaul", href: "/services/main-engine-repair" },
 ];
 
 const NAV = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about-us" },
-  { label: "PRODUCTS", href: "#", children: PRODUCTS },
+  { label: "PRODUCTS", href: "/products", children: PRODUCTS },
   {
     label: "SERVICES",
-    href: "#",
+    href: "/services",
     children: SERVICES,
   },
   { label: "SERVICE PORT", href: "/service-port" },

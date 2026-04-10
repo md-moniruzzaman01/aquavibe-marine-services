@@ -3,18 +3,13 @@
 import { motion } from "framer-motion";
 
 const CLIENTS = [
-  "Maersk Line",
-  "MSC",
-  "CMA CGM",
-  "COSCO Shipping",
-  "Evergreen Marine",
-  "ONE (Ocean Network)",
-  "PIL",
-  "Yang Ming",
-  "Emirates Shipping",
-  "MISC Berhad",
-  "Hapag-Lloyd",
-  "Bengal Shipping",
+  "Fleet management limited",
+  "Everglory ship charterer",
+  "Team Bulk Carriers",
+  "Tradebound bangladesh ltd",
+  "Peckward holdings",
+  "Hilf shipping",
+  "And others 60+ bangladesh shipping and and owners opa is our honorable customer",
 ];
 
 const MARQUEE_ITEMS = [...CLIENTS, ...CLIENTS];

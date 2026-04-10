@@ -4,26 +4,36 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+// Updated to match your data objects
 const PRODUCTS = [
-  { label: "Marine Fender Supply", href: "/marine-fender-supply" },
-  { label: "Ship Spare Parts", href: "/ship-crane-repair-and-crane-spare-parts-supply-services" },
-  { label: "Marine Lube Oil", href: "/marine-lube-oil" },
-  { label: "Physical Bunker And Lubricant Supply", href: "/bunker-supply" },
-  { label: "Ship Stores Supply", href: "/store-supply" },
-  { label: "Food Provisions Supply", href: "/provision-supply" },
+  { label: "All Products", href: "/products" },
+  { label: "Yokohama Pneumatic Fender", href: "/products/yokohama-fender" },
+  { label: "Remote Control Grab Bucket", href: "/products/remote-control-grab" },
+  { label: "Marine Spare Parts Supply", href: "/products/spare-parts-supply" },
+  { label: "Excavator Rental & Supply", href: "/products/excavator-supply" },
+];
+
+// Updated to match your data objects
+const SERVICES = [
+  { label: "All Services", href: "/services" },
+  { label: "Marine Boat & Logistics", href: "/services/boat-service" },
+  { label: "Underwater Hull Cleaning", href: "/services/hull-cleaning" },
+  { label: "Cargo Hold Cleaning", href: "/services/cargo-hold-cleaning" },
+  { label: "Grab Repair & Maintenance", href: "/services/grab-repair" },
+  { label: "Crane Repair & Maintenance", href: "/services/crane-repair" },
+  { label: "Main Engine Repair & Overhaul", href: "/services/main-engine-repair" },
 ];
 
 const NAV = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about-us" },
-  { label: "PRODUCTS", href: "#", children: PRODUCTS },
+  { label: "PRODUCTS", href: "/products", children: PRODUCTS },
   {
     label: "SERVICES",
-    href: "#",
-    children: [{ label: "Ship Repair Services", href: "/ship-repairing-maintenance" }],
+    href: "/services",
+    children: SERVICES,
   },
   { label: "SERVICE PORT", href: "/service-port" },
-  { label: "MEDIA & EVENTS", href: "#" },
   { label: "CONTACT US", href: "/contact-us" },
 ];
 
@@ -63,7 +73,7 @@ export default function Header() {
           </Link>
           <div className="hidden lg:block">
             <Image
-              src="https://aquavibemarineservices.com/wp-content/uploads/2024/06/LETTERHEAD-LOGO.png"
+              src="/LETTERHEAD-LOGO.png"
               alt="Certifications"
               width={245} height={80}
               className="h-16 w-auto object-contain"

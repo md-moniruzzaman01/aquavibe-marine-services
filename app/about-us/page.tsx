@@ -1,155 +1,233 @@
 "use client";
-import AboutModern from "../Home/partials/About";
-import WhyChooseUs from "../Home/partials/WhyChooseUs";
-import Certifications from "../Home/partials/Certifications";
-import TestimonialSection from "../Home/partials/Testimonial";
-import { Anchor, Shield, Globe, Ship } from "lucide-react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
 
-// export const metadata = {
-//   title: "About Us | Sultan Fleet Serve - Bangladesh Marine Experts",
-//   description: "Discover Sultan Fleet Serve, the premier provider of Yokohama Fenders and comprehensive marine services across Chittagong, Mongla, and Payra ports.",
-// };
+import { Ship, Wrench, Anchor, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 
-export default function AboutUsPage() {
+// Using 'as const' ensures TypeScript treats the string "easeOut" 
+// as a specific Easing type rather than a generic string.
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, ease: "easeOut" }
+} as const;
+
+const staggerContainer: Variants = {
+  initial: {},
+  whileInView: { 
+    transition: { 
+      staggerChildren: 0.1 
+    } 
+  }
+};
+
+export default function AboutPage() {
   return (
-    <main className="bg-white">
-      {/* HERO SECTION 
-          Using the professional Navy (#08214a) and Gold (#e4a04f) palette
-      */}
-      <section className="relative pt-32 pb-24 bg-[#08214a] overflow-hidden">
-        {/* Animated Background Overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.1"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#grid)" />
-          </svg>
+    <main className="bg-[#fcfcfd] text-[#08214a] overflow-x-hidden">
+      {/* HERO SECTION */}
+      <section className="relative pt-40 pb-32 bg-[#08214a] overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e4a04f] rounded-full blur-[120px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500 rounded-full blur-[120px]" />
         </div>
         
-        {/* Decorative Glow */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#e4a04f]/10 blur-[100px] rounded-full" />
-        
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+          <motion.div 
+            initial={fadeInUp.initial}
+            whileInView={fadeInUp.whileInView}
+            viewport={fadeInUp.viewport}
+            transition={fadeInUp.transition}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#e4a04f] animate-pulse" />
-              <span className="text-white/80 font-mono text-[10px] tracking-widest uppercase">Legacy of Excellence</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8">
-              Reliability in Every <br />
-              <span className="text-[#e4a04f]">Nautical Mile.</span>
+            <span className="inline-block py-1 px-3 rounded-full bg-white/10 text-[#e4a04f] text-sm font-bold tracking-widest uppercase mb-4">
+              Est. in Chattogram
+            </span>
+            <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
+              Sultan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e4a04f] to-orange-300">Fleet Serve</span>
             </h1>
-            
-            <p className="text-blue-100/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
-              Sultan Fleet Serve is Bangladesh's premier maritime partner, bridging the gap between global shipping standards and local port efficiency. Specialized in Yokohama Fenders and full-scale vessel support.
+            <p className="max-w-3xl mx-auto text-xl md:text-2xl text-blue-100/80 leading-relaxed font-light">
+              Redefining marine logistics across Bangladesh’s major ports with 
+              unmatched precision and safety-driven excellence.
             </p>
-
-            {/* Quick Stats Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-white/10 pt-10">
-              {[
-                { label: "Ports Covered", val: "All 3" },
-                { label: "Fender Experts", val: "Yokohama" },
-                { label: "Availability", val: "24/7" },
-                { label: "Team", val: "Expert" },
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-white font-black text-2xl">{stat.val}</div>
-                  <div className="text-[#e4a04f] font-mono text-[10px] uppercase tracking-wider">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* MISSION & VISION SPLIT 
-          Adds professional depth beyond just a standard text block
-      */}
-      <section className="py-24 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-               <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1516514104262-9599d1461993?auto=format&fit=crop&w=1000" 
-                    alt="Port Operations" 
-                    className="w-full h-full object-cover"
-                  />
-               </div>
-               <div className="absolute -bottom-6 -right-6 bg-[#08214a] p-8 rounded-2xl hidden md:block">
-                  <Ship className="text-[#e4a04f] w-10 h-10" />
-               </div>
+      {/* WHO WE ARE */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center">
+          <motion.div 
+            className="lg:col-span-7 space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-black leading-tight">
+                    Reliability in Every <br/> <span className="text-[#e4a04f]">Nautical Mile.</span>
+                </h2>
+                <div className="w-20 h-1.5 bg-[#e4a04f] rounded-full" />
             </div>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              We are more than a service provider; we are a strategic partner for vessel owners. 
+              Our strength lies in a unified operational framework that combines deep technical 
+              expertise with rapid-response deployment.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-6 pt-4">
+                <div className="flex items-start gap-3 text-gray-700">
+                    <CheckCircle2 className="text-[#e4a04f] shrink-0" size={20} />
+                    <span className="font-semibold italic">Rapid Deployment Ready</span>
+                </div>
+                <div className="flex items-start gap-3 text-gray-700">
+                    <CheckCircle2 className="text-[#e4a04f] shrink-0" size={20} />
+                    <span className="font-semibold italic">Compliance Guaranteed</span>
+                </div>
+            </div>
+          </motion.div>
 
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-black text-[#08214a] mb-4">Our Core Philosophy</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  We don’t just supply equipment; we ensure continuity. At Sultan Fleet Serve, we understand that every hour a vessel spends at berth is critical. Our mission is to minimize downtime through rapid response and premium equipment supply.
+          <motion.div 
+            className="lg:col-span-5 relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="bg-[#08214a] p-12 rounded-[2rem] text-white shadow-2xl relative z-10">
+                <Ship className="text-[#e4a04f] mb-6" size={48} />
+                <h3 className="text-2xl font-bold mb-4">Strategic Port Presence</h3>
+                <p className="text-blue-100/70 leading-relaxed">
+                    With an active presence at major anchorages, we bridge the gap between 
+                    complex technical demands and time-sensitive maritime operations.
                 </p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-2xl border border-gray-100">
-                  <Globe className="text-[#e4a04f] mb-3" size={24} />
-                  <h4 className="font-bold text-[#08214a] mb-2">Our Vision</h4>
-                  <p className="text-sm text-gray-500">To be the most trusted name for Yokohama Fender systems and marine support in South Asia.</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl border border-gray-100">
-                  <Shield className="text-[#e4a04f] mb-3" size={24} />
-                  <h4 className="font-bold text-[#08214a] mb-2">Our Quality</h4>
-                  <p className="text-sm text-gray-500">Every product delivered meets ISO standards, ensuring maximum safety for both crew and cargo.</p>
-                </div>
-              </div>
             </div>
+            <div className="absolute inset-0 bg-[#e4a04f] translate-x-4 translate-y-4 rounded-[2rem] -z-10" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section className="py-24 bg-gray-100/50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl font-black">Core Capabilities</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Integrated solutions designed for heavy-duty marine environments.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 group transition-all"
+            >
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#08214a] transition-colors duration-300">
+                <Anchor className="text-[#e4a04f]" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold mb-6">Marine Equipment Supply</h3>
+              <ul className="grid grid-cols-1 gap-4 text-gray-600">
+                {[
+                    "Yokohama Fenders", 
+                    "10 & 12 CBM Remote Control Grabs", 
+                    "Manual (Bangla) Grabs", 
+                    "Excavators & Payloaders", 
+                    "10-Ton Shore Cranes"
+                ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#e4a04f]" />
+                        {item}
+                    </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 group transition-all"
+            >
+              <div className="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#08214a] transition-colors duration-300">
+                <Wrench className="text-[#e4a04f]" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold mb-6">Technical Marine Services</h3>
+              <ul className="grid grid-cols-1 gap-4 text-gray-600">
+                {[
+                    "Hull Cleaning (Inspection Incl.)", 
+                    "Cargo Hold & Tank Cleaning", 
+                    "Grab Repair & Maintenance", 
+                    "Main Engine Repair", 
+                    "Crane System Diagnostics"
+                ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#e4a04f]" />
+                        {item}
+                    </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* MAIN CONTENT BLOCKS 
-          Integrating your updated components
-      */}
-      <div className="relative z-10 -mt-10">
-        <AboutModern />
-      </div>
-
-      <WhyChooseUs />
-
-      {/* PORT LOGISTICS STRIP */}
-      <section className="bg-[#08214a] py-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
-            <span className="text-white font-black text-xl tracking-tighter">PORT OF CHITTAGONG</span>
-            <span className="text-white font-black text-xl tracking-tighter">PORT OF MONGLA</span>
-            <span className="text-white font-black text-xl tracking-tighter">PORT OF PAYRA</span>
+      {/* THE EDGE / WHY CHOOSE US */}
+      <section className="py-24 bg-[#08214a] text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <h2 className="text-4xl font-black mb-4">The Sultan Edge</h2>
+            <p className="text-blue-100/60">Why leading vessel operators trust our support infrastructure.</p>
           </div>
+
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-5 gap-4"
+          >
+            {[
+              "Port-Wide Coverage",
+              "24/7 Rapid Response",
+              "Certified Equipment",
+              "Expert Engineers",
+              "Zero-Downtime Focus",
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                  initial: { opacity: 0, y: 20 },
+                  whileInView: { opacity: 1, y: 0 }
+                }}
+                className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all text-center"
+              >
+                <div className="text-[#e4a04f] font-black text-xl mb-2">0{i+1}</div>
+                <div className="text-sm font-bold tracking-tight uppercase leading-tight">{item}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      <Certifications />
-      <TestimonialSection />
-
-      {/* FINAL CTA */}
-      <section className="py-24 bg-white text-center">
-        <div className="max-w-3xl mx-auto px-6">
-          <Anchor className="mx-auto text-[#e4a04f] mb-6" size={48} />
-          <h2 className="text-4xl font-black text-[#08214a] mb-6">Ready to Secure Your Vessel?</h2>
-          <p className="text-gray-500 mb-10 leading-relaxed">
-            Whether you need urgent Yokohama Fender servicing or routine ship stores, Sultan Fleet Serve is ready to mobilize across all Bangladesh ports.
+      {/* CTA SECTION */}
+      <section className="py-32">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div 
+             initial={{ opacity: 0, scale: 0.8 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             viewport={{ once: true }}
+             className="inline-flex items-center justify-center w-20 h-20 bg-orange-100 rounded-full mb-8"
+          >
+            <ShieldCheck className="text-[#e4a04f]" size={40} />
+          </motion.div>
+          <h2 className="text-5xl font-black mb-6 tracking-tight text-[#08214a]">Ready to secure your fleet?</h2>
+          <p className="text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Contact our technical team today for scheduled maintenance or emergency equipment supply. 
+            We are standby at all major Bangladesh anchorages.
           </p>
+
           <div className="flex flex-wrap justify-center gap-4">
-             <button className="px-10 py-4 bg-[#08214a] text-white font-bold rounded-xl hover:bg-[#e4a04f] transition-all shadow-xl">
-               Contact Our Port Office
-             </button>
+            <button className="group px-10 py-5 bg-[#08214a] text-white font-bold rounded-2xl hover:bg-[#e4a04f] transition-all flex items-center gap-2 shadow-xl shadow-blue-900/20">
+              Start Partnership
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </button>
+            <button className="px-10 py-5 bg-white border-2 border-gray-200 text-[#08214a] font-bold rounded-2xl hover:bg-gray-50 transition-all">
+              View All Services
+            </button>
           </div>
         </div>
       </section>

@@ -12,64 +12,64 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: "Marine Fender Supply",
-    image: "/services/2-min-2.png",
-    desc: "High-quality marine fenders ensuring vessel safety during berthing operations.",
+    title: "Yokohama Fender",
+    image: "/services/marine-fender-supply.jpeg",
+    desc: "High-quality pneumatic rubber fenders designed to protect vessels during berthing operations sts operation at outer anchor",
   },
   {
-    title: "Crane Grab Rental",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=600",
-    desc: "Reliable crane and grab equipment for efficient cargo handling operations.",
+    title: "Remote Control Grab (10 CBM / 12 CBM)",
+    image: "/services/remote control grab.jpg",
+    desc: "Advanced automatic grabs for bulk cargo handling.",
   },
   {
-    title: "Ship Repair & Maintenance",
-    image: "/services/1-min-2.png",
-    desc: "Comprehensive repair and maintenance services by certified marine engineers.",
+    title: "Manual / Bangla Grab",
+    image: "/services/manual grab.png",
+    desc: "Reliable manual grabs for general cargo handling",
+  },
+  // {
+  //   title: "Spare Parts Supply",
+  //   image: "/services/spare parts.png",
+  //   desc: "We supply all kinds of marine and industrial spare parts.",
+  // },
+  {
+    title: "Excavator Supply",
+    image: "/services/escavetor.jpg",
+    desc: "Heavy-duty excavators for port and construction operations.",
   },
   {
-    title: "Bunker Supply",
-    image: "/services/7-min.png",
-    desc: "24/7 bunker fuel and lubricant supply across all major ports.",
+    title: "Payloader (Wheel Loader) Supply",
+    image: "/services/payloader.jpg",
+    desc: "Efficient loading equipment for bulk materials.",
   },
   {
-    title: "Provision Supply",
-    image: "/services/4-min.png",
-    desc: "Fresh and preserved provisions meeting global maritime standards.",
+    title: "Shore Crane",
+    image: "/services/shore.webp",
+    desc: "Heavy lifting solutions for port operations.",
   },
   {
-    title: "Bond Store Supply",
-    image: "/services/5-min.png",
-    desc: "Duty-free bonded stores and consumables delivered directly to vessels.",
+    title: "Bolt Seal & Wire Seal",
+    image: "/services/seal.jpg",
+    desc: "Security seals for cargo and containers.",
   },
   {
-    title: "Ship Store Supply",
-    image: "/services/6-min.png",
-    desc: "Complete deck, engine, and cabin store supply solutions.",
+    title: "Hull cleaning services",
+    image: "/services/hull cleaning.jpg",
+    desc: "Professional underwater hull cleaning services",
   },
   {
-    title: "Cleaning Services",
-    image: "/services/8-min.png",
-    desc: "Professional vessel and tank cleaning with environmental compliance.",
+    title: "Cargo Hold Cleaning",
+    image: "/services/cargo hold cleaning.jpg",
+    desc: "Complete cleaning solutions for cargo holds.",
   },
   {
-    title: "Security Services",
-    image: "/services/10-min.png",
-    desc: "Certified maritime security personnel ensuring vessel protection.",
+    title: "Tank Cleaning Service",
+    image: "/services/tank cleaning.jpg",
+    desc: "Complete cleaning solutions for cargo holds.",
   },
   {
-    title: "Repairing Services",
-    image: "/services/11.png",
-    desc: "Mechanical, electrical, and structural repair solutions.",
-  },
-  {
-    title: "Marine Lube Oil",
-    image: "/services/12.png",
-    desc: "Premium marine lubricants for optimal engine performance.",
-  },
-  {
-    title: "Crane Spare Parts",
-    image: "/services/BOND-STORE-SUPPLY.png",
-    desc: "Spare parts and repair solutions for all crane systems.",
+    title: "Chipping, Painting & Surface Treatment",
+    image: "/services/surface preparation.jpg",
+    desc: "Expert Surface preparation and coating services.",
   },
 ];
 
@@ -78,13 +78,8 @@ const ServicesSection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section
-      id="services"
-      className="bg-white py-28 lg:py-32"
-      ref={ref}
-    >
+    <section id="services" className="bg-white py-28 lg:py-32" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
         {/* ===== HEADER (MATCH PREVIOUS SECTION) ===== */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -97,7 +92,7 @@ const ServicesSection: React.FC = () => {
           </p>
 
           <h2 className="text-4xl md:text-5xl font-extrabold leading-[1.05] tracking-tight text-[#1d2128]">
-             Sultan Fleet Serve
+            Sultan Fleet Serve
           </h2>
 
           <div className="mt-6 flex items-center gap-3">
@@ -106,10 +101,12 @@ const ServicesSection: React.FC = () => {
           </div>
 
           <p className="mt-6 text-gray-600 leading-relaxed">
-            Sultan Fleet Serve delivers a full spectrum of marine, logistics, and vessel support services
-across all major seaports of Bangladesh, including Chattogram, Mongla, and Payra. With a
-strong operational presence and experienced workforce, we ensure that every service is executed
-with precision, safety, and efficiency to meet international maritime standards.
+            Sultan Fleet Serve delivers a full spectrum of marine, logistics,
+            and vessel support services across all major seaports of Bangladesh,
+            including Chattogram, Mongla, and Payra. With a strong operational
+            presence and experienced workforce, we ensure that every service is
+            executed with precision, safety, and efficiency to meet
+            international maritime standards.
           </p>
         </motion.div>
 

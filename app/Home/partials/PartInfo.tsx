@@ -5,31 +5,31 @@ import { useRef } from "react";
 import { MapPin, Navigation, Ruler, Weight, Anchor } from "lucide-react";
 
 const PORT_SPECS = [
-  { label: "MAX VESSEL LENGTH", value: "245 meters" },
-  { label: "MAX DRAUGHT", value: "12.1 meters" },
-  { label: "MAX DEADWEIGHT", value: "109,280 tonnes" },
-  { label: "IMPORT / EXPORT SHARE", value: "92% of Bangladesh" },
+  { label: "MAX VESSEL LENGTH", value: "190 - 200 meters" },
+  { label: "MAX DRAUGHT", value: "8.5 - 9.5 meters" },
+  { label: "MAX DEADWEIGHT", value: "Up to 50,000 DWT" },
+  { label: "CHANNEL LENGTH", value: "Approx. 80 km" },
+  { label: "IMPORT / EXPORT SHARE", value: "Majority of Bangladesh" },
   { label: "UN / LOCODE", value: "BDCGP" },
-  { label: "ESTABLISHED", value: "4th Century BCE" },
 ];
 
 const PORTS = [
   {
-    name: "Chittagong",
+    name: "Chattogram",
     code: "BDCGP",
-    desc: "Main seaport — handles 92% of Bangladesh's international trade",
+    desc: "Principal seaport — handles the majority of Bangladesh's import and export cargo.",
     active: true,
   },
   {
     name: "Mongla",
     code: "BDMGL",
-    desc: "Second largest seaport located in the Sundarbans mangrove region",
+    desc: "Second largest seaport located in the Sundarbans mangrove region.",
     active: true,
   },
   {
     name: "Payra",
     code: "BDPYR",
-    desc: "Bangladesh's newest deep-sea port in southern Patuakhali district",
+    desc: "Bangladesh's newest deep-sea port in southern Patuakhali district.",
     active: true,
   },
 ];
@@ -57,8 +57,7 @@ export default function PortInfo() {
             <span className="text-secondary font-mono text-xs tracking-[0.3em] uppercase">Service Coverage</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-dark leading-tight max-w-2xl">
-            Ports We{" "}
-            <span className="text-secondary">Operate In</span>
+            Ports We <span className="text-secondary">Operate In</span>
           </h2>
           <p className="mt-4 text-gray-500 text-base max-w-xl leading-relaxed">
             Our operations span all three major seaports in Bangladesh with dedicated teams on ground for fast, efficient vessel turnaround.
@@ -77,7 +76,7 @@ export default function PortInfo() {
             <div className="relative rounded-2xl overflow-hidden border border-gray-100 shadow-lg">
               <img
                 src="https://media.base44.com/images/public/69d33c7a3f79b23a0b421b4c/c1a0b0a5f_generated_308c52d6.png"
-                alt="Port of Chittagong Bangladesh"
+                alt="Port of Chattagong Bangladesh"
                 className="w-full h-72 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent" />
@@ -87,8 +86,8 @@ export default function PortInfo() {
                 {[
                   { icon: MapPin, label: `N 22° 16' 22.79"` },
                   { icon: Navigation, label: `E 091° 49' 55.20"` },
-                  { icon: Ruler, label: "245m Max" },
-                  { icon: Weight, label: "109,280t DWT" },
+                  { icon: Ruler, label: "200m Max LOA" },
+                  { icon: Weight, label: "50,000t DWT" },
                 ].map(({ icon: Icon, label }) => (
                   <div
                     key={label}
@@ -105,13 +104,13 @@ export default function PortInfo() {
             <div className="bg-white rounded-2xl p-6 border border-primary/10">
               <div className="flex items-center gap-2 mb-5">
                 <Anchor className="w-4 h-4 text-secondary" />
-                <span className="font-mono text-xs text-primary tracking-widest uppercase">Port Specifications</span>
+                <span className="font-mono text-xs text-primary tracking-widest uppercase">Chattogram Specifications</span>
               </div>
               <div className="space-y-3">
                 {PORT_SPECS.map(({ label, value }) => (
-                  <div key={label} className="flex justify-between items-center py-2.5 border-b border-white/5 last:border-0">
-                    <span className="font-mono text-[10px]  tracking-wider">{label}</span>
-                    <span className="font-mono text-xs  font-semibold">{value}</span>
+                  <div key={label} className="flex justify-between items-center py-2.5 border-b border-gray-100 last:border-0">
+                    <span className="font-mono text-[10px] tracking-wider text-gray-500">{label}</span>
+                    <span className="font-mono text-xs font-semibold text-dark">{value}</span>
                   </div>
                 ))}
               </div>
@@ -126,7 +125,7 @@ export default function PortInfo() {
             className="space-y-5"
           >
             <div className="text-gray-500 text-sm leading-relaxed mb-8">
-              Aquavibe Marine Services has boots on the ground at each major port. Our Chittagong head office coordinates vessel requirements with speed and precision, while satellite teams manage Mongla and Payra operations.
+              Aquavibe Marine Services provides end-to-end support at each major port. Our Chattogram head office coordinates vessel requirements with speed and precision, managing the critical tidal windows for safe and efficient entry.
             </div>
 
             {PORTS.map((port, i) => (

@@ -85,7 +85,7 @@ export default function HeroCarousel() {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-10 h-full flex md:items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
           <AnimatePresence mode="wait">
             <motion.div

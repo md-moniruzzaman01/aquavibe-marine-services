@@ -5,12 +5,17 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const PRODUCTS = [
-  { label: "Marine Fender Supply", href: "/marine-fender-supply" },
-  { label: "Ship Spare Parts", href: "/ship-crane-repair-and-crane-spare-parts-supply-services" },
-  { label: "Marine Lube Oil", href: "/marine-lube-oil" },
-  { label: "Physical Bunker And Lubricant Supply", href: "/bunker-supply" },
-  { label: "Ship Stores Supply", href: "/store-supply" },
-  { label: "Food Provisions Supply", href: "/provision-supply" },
+  { label: "Yokohama fender", href: "/" },
+  { label: "Auto 10 cbm / 12 cbm remote control grab supply", href: "/" },
+  { label: "Spare parts supply", href: "/" },
+  { label: "Bolt seal ,12 inch wire seal", href: "/" },
+  { label: "32 inch 62 inch wire seal", href: "/" },
+];
+const SERVICES = [
+  { label: "Marine Equipment & Products", href: "/" },
+  { label: "Boat Service (Chattogram Port)", href: "/" },
+  { label: "Spare Parts Supply", href: "/" },
+  { label: "Marine Engine Servicing", href: "/" },
 ];
 
 const NAV = [
@@ -20,10 +25,9 @@ const NAV = [
   {
     label: "SERVICES",
     href: "#",
-    children: [{ label: "Ship Repair Services", href: "/ship-repairing-maintenance" }],
+    children: SERVICES,
   },
   { label: "SERVICE PORT", href: "/service-port" },
-  { label: "MEDIA & EVENTS", href: "#" },
   { label: "CONTACT US", href: "/contact-us" },
 ];
 
@@ -63,7 +67,7 @@ export default function Header() {
           </Link>
           <div className="hidden lg:block">
             <Image
-              src="https://aquavibemarineservices.com/wp-content/uploads/2024/06/LETTERHEAD-LOGO.png"
+              src="/LETTERHEAD-LOGO.png"
               alt="Certifications"
               width={245} height={80}
               className="h-16 w-auto object-contain"

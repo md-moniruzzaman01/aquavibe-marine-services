@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     company: "MV Sea Pioneer",
     initials: "RF",
     quote:
-      "Aquavibe Marine Services has been our go-to ship chandler in Chittagong for over two years. Their provisions arrive fresh, their spare parts are genuine, and their response time is unmatched. Highly recommended for all visiting vessels.",
+      "Excellent service at Chattogram Port. Their team handled our grab repair and hull cleaning efficiently with strong technical expertise and fast turnaround.",
     rating: 5,
     port: "Chittagong",
   },
@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
     company: "Korea Shipping Co.",
     initials: "KS",
     quote:
-      "We coordinate all our vessel supplies in Bangladesh through Aquavibe. Their professionalism and ability to handle last-minute requirements 24/7 has saved us enormous time and cost. A truly reliable partner.",
+      "We sourced Yokohama fenders and remote control grabs from them. Product quality was outstanding, and delivery was on time. Highly professional and reliable supplier.",
     rating: 5,
     port: "All Ports",
   },
@@ -45,7 +45,7 @@ const testimonials: Testimonial[] = [
     company: "IndoShip Management",
     initials: "SV",
     quote:
-      "From bunker supply to emergency engine repairs — Aquavibe delivers on every front. Their certified engineers resolved our main engine issue within hours of arrival at Mongla Port. Exceptional service.",
+      "Their crane repair and main engine maintenance support helped us minimize downtime. The team is skilled, responsive, and understands vessel operations very well.",
     rating: 5,
     port: "Mongla",
   },
@@ -56,7 +56,7 @@ const testimonials: Testimonial[] = [
     company: "Gulf Maritime LLC",
     initials: "AR",
     quote:
-      "The team at Aquavibe is knowledgeable, efficient and always available. They understand the maritime industry's demands and consistently go above and beyond. Our vessels always leave Bangladesh well-provisioned.",
+      "Hold cleaning and tank cleaning services were completed safely and efficiently. We appreciate their attention to detail and adherence to safety standards.",
     rating: 5,
     port: "Payra",
   },

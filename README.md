@@ -4,7 +4,7 @@ A premium maritime logistics and supply provider website built with Next.js 16 (
 
 ## 🚢 Overview
 
-Aquavibe Marine Services (operates as Sultan Fleet Serves) is a leading ship chandler in Bangladesh, supplying vessels calling at the major ports of Chittagong, Mongla, and Payra. 
+Aquavibe Marine Services (operates as Sultan Fleet Serve) is a leading ship chandler in Bangladesh, supplying vessels calling at the major ports of Chittagong, Mongla, and Payra. 
 
 This repository contains the front-end codebase for their corporate website which is designed to convert fleet managers, vessel masters, and maritime companies by visually projecting trust, reliability, and engineering excellence. It uses a custom-developed premium nautical theme.
 

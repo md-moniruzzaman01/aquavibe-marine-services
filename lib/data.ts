@@ -2,7 +2,7 @@ export const PRODUCTS = [
   {
     slug: "yokohama-fender",
     title: "Yokohama Pneumatic Fender",
-    image: "/yokohama_fender_premium_1775848431869.png",
+    image: "/services/marine-fender-supply.jfif",
 
     description:
       "Engineered for critical berthing and offshore transfer operations, our Yokohama Pneumatic Fenders deliver superior energy absorption and vessel protection in the most demanding marine environments. Designed to meet international standards, they ensure safe and efficient ship-to-ship and ship-to-jetty operations.",
@@ -46,7 +46,7 @@ export const PRODUCTS = [
   {
     slug: "remote-control-grab",
     title: "Remote Control Grab Bucket (10 CBM / 12 CBM)",
-    image: "/remote_control_grab_premium_1775848558763.png",
+    image: "/services/remote control grab.jpg",
 
     description:
       "Our remote control grab buckets are designed for efficient and automated bulk cargo handling without external power sources. Built with high-strength steel and precision engineering, they ensure reliable performance in continuous port operations.",
@@ -133,7 +133,7 @@ export const PRODUCTS = [
   {
     slug: "excavator-supply",
     title: "Excavator Rental & Supply",
-    image: "/excavator_port_premium_1775848704686.png",
+    image: "/services/escavetor.jpg",
 
     description:
       "We supply high-performance excavators for port operations, dredging, and construction projects. Our fleet is maintained to international standards and operated by skilled professionals.",
@@ -256,7 +256,7 @@ export const SERVICES = [
   {
     slug: "cargo-hold-cleaning",
     title: "Cargo Hold Cleaning Service",
-    image: "/services/cargo hold cleaning.jpg",
+    image: "/services/Hold Cleaning.jpg",
 
     description:
       "Comprehensive cargo hold cleaning services to prepare vessels for the next cargo, ensuring compliance with international shipping standards.",

@@ -13,7 +13,7 @@ type Service = {
 const services: Service[] = [
   {
     title: "Yokohama Fender",
-    image: "/services/marine-fender-supply.jpeg",
+    image: "/services/marine-fender-supply.jfif",
     desc: "High-quality pneumatic rubber fenders designed to protect vessels during berthing operations sts operation at outer anchor",
   },
   {
@@ -43,7 +43,7 @@ const services: Service[] = [
   },
   {
     title: "Shore Crane",
-    image: "/services/shore.webp",
+    image: "/services/shore.jpg",
     desc: "Heavy lifting solutions for port operations.",
   },
   {
@@ -58,7 +58,7 @@ const services: Service[] = [
   },
   {
     title: "Cargo Hold Cleaning",
-    image: "/services/cargo hold cleaning.jpg",
+    image: "/services/Hold Cleaning.jpg",
     desc: "Complete cleaning solutions for cargo holds.",
   },
   {

@@ -104,8 +104,7 @@ export default function WhyChooseUs() {
             Why Choose Sultan Fleet Serve?
           </h2>
           <p className="mt-4 text-base max-w-xl mx-auto leading-relaxed">
-            Leading the maritime industry in Bangladesh with specialized equipment, 
-            tailored solutions, and an unwavering commitment to safety.
+           We provide the Best Service Guarantee.
           </p>
         </motion.div>
 

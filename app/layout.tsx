@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // ── Core ──────────────────────────────────────────────────────────────
   title: {
-    default: "Sultan Fleet Serves – Best Ship Spare Parts Supplier in BD",
-    template: "%s | Sultan Fleet Serves",
+    default: "Sultan Fleet Serve – Best Ship Spare Parts Supplier in BD",
+    template: "%s | Sultan Fleet Serve",
   },
   description:
-    "Sultan Fleet Serves is Bangladesh's leading ship chandler. We supply marine spare parts, lube oil, bunker, provisions & ship stores across Chittagong, Mongla & Payra ports. 24/7 service.",
+    "Sultan Fleet Serve is Bangladesh's leading ship chandler. We supply marine spare parts, lube oil, bunker, provisions & ship stores across Chittagong, Mongla & Payra ports. 24/7 service.",
 
   // ── Canonical & Base URL ──────────────────────────────────────────────
   metadataBase: new URL("https://sultanfleetserve.com"),
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
   },
 
   // ── App Info ──────────────────────────────────────────────────────────
-  applicationName: "Sultan Fleet Serves",
+  applicationName: "Sultan Fleet Serve",
   authors: [
     {
       name: "Sultan Fleet Serve s",

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "provision supply Chittagong",
     "ship repair services Bangladesh",
     "ship manning Bangladesh",
-    "Aquavibe Marine Services",
+    "Sultan Fleet Serve",
     "ship chandler Chittagong",
     "ship chandler Mongla",
     "ship chandler Payra",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://sultanfleetserve.com",
-    siteName: "Aquavibe Marine Services",
-    title: "Aquavibe Marine Services – Best Ship Spare Parts Supplier in BD",
+    siteName: "Sultan Fleet Serve",
+    title: "Sultan Fleet Serve – Best Ship Spare Parts Supplier in BD",
     description:
       "Bangladesh's leading ship chandler. Marine spare parts, lube oil, bunker, provisions & ship repair services across Chittagong, Mongla & Payra. Available 24/7.",
     locale: "en_US",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         url: "/og-image.png", // place a 1200×630px image in /public
         width: 1200,
         height: 630,
-        alt: "Aquavibe Marine Services – Ship Chandler in Bangladesh",
+        alt: "Sultan Fleet Serve – Ship Chandler in Bangladesh",
       },
     ],
   },
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   // ── Twitter / X ───────────────────────────────────────────────────────
   twitter: {
     card: "summary_large_image",
-    title: "Aquavibe Marine Services – Best Ship Spare Parts Supplier in BD",
+    title: "Sultan Fleet Serve – Best Ship Spare Parts Supplier in BD",
     description:
       "Bangladesh's leading ship chandler. Marine spare parts, lube oil, bunker, provisions & ship repair across Chittagong, Mongla & Payra ports.",
     images: ["/og-image.png"],

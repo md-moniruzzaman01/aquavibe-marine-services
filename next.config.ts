@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'aquavibemarineservices.com', // Replace with your image provider's domain
+        hostname: 'sultanfleetserve.com', // Replace with your image provider's domain
         port: '',
         pathname: '/**', // Allows all paths from this domain
       },

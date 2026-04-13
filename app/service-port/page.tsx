@@ -158,7 +158,7 @@ export default function ServicePorts() {
              </div>
              <div className="px-8 py-4 bg-white border border-gray-200 rounded-2xl shadow-sm">
                 <p className="text-[10px] uppercase text-gray-400 font-bold mb-1">Email Support</p>
-                <p className="text-[#08214a] font-bold">aquavibe2023@gmail.com</p>
+                <p className="text-[#08214a] font-bold">sultanfleetserve@gmail.com</p>
              </div>
           </div>
         </div>

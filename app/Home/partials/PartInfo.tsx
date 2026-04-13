@@ -125,7 +125,7 @@ export default function PortInfo() {
             className="space-y-5"
           >
             <div className="text-gray-500 text-sm leading-relaxed mb-8">
-              Aquavibe Marine Services provides end-to-end support at each major port. Our Chattogram head office coordinates vessel requirements with speed and precision, managing the critical tidal windows for safe and efficient entry.
+               Sultan Fleet Serve provides end-to-end support at each major port. Our Chattogram head office coordinates vessel requirements with speed and precision, managing the critical tidal windows for safe and efficient entry.
             </div>
 
             {PORTS.map((port, i) => (

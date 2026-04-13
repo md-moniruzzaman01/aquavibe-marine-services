@@ -71,7 +71,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[#e4a04f] font-mono text-xs tracking-[0.3em] uppercase font-bold">About Aquavibe</span>
+              <span className="text-[#e4a04f] font-mono text-xs tracking-[0.3em] uppercase font-bold">About Sultan Fleet Serve</span>
               <div className="h-[2px] w-12 bg-[#e4a04f]/50" />
             </div>
 
@@ -80,7 +80,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-gray-600 leading-relaxed mb-8 text-[15px] sm:text-base">
-              Aquavibe Marine Services delivers top-tier crewing and management solutions, ensuring your vessels are operated by highly skilled professionals. Based in Chittagong with coverage across Mongla and Payra, we prioritize optimal maintenance, regulatory compliance, and operational safety.
+               Sultan Fleet Serve delivers top-tier crewing and management solutions, ensuring your vessels are operated by highly skilled professionals. Based in Chittagong with coverage across Mongla and Payra, we prioritize optimal maintenance, regulatory compliance, and operational safety.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4 mb-10">

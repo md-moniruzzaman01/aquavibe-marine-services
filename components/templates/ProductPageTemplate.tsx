@@ -67,16 +67,16 @@ export default function ProductPageTemplate({
                 </div>
                 <div>
                   <div className="font-bold text-white text-sm">Call 24/7</div>
-                  <div className="text-white/60 text-xs">+880 1728 841299</div>
+                  <div className="text-white/60 text-xs">+880 1624 434052</div>
                 </div>
               </a>
-              <a href="mailto:aquavibe2023@gmail.com" className="flex items-center gap-3 group">
+              <a href="mailto:sultanfleetserve@gmail.com" className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-xl bg-[#51CFED]/10 border border-[#51CFED]/20 flex items-center justify-center transition-colors group-hover:bg-[#51CFED]">
                   <Mail className="w-4 h-4 text-[#51CFED] group-hover:text-[#060315] transition-colors" />
                 </div>
                 <div>
                   <div className="font-bold text-white text-sm">Email Inquiry</div>
-                  <div className="text-white/60 text-xs">aquavibe2023@gmail.com</div>
+                  <div className="text-white/60 text-xs">sultanfleetserve@gmail.com</div>
                 </div>
               </a>
             </div>

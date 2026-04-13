@@ -74,7 +74,7 @@ export default function CTABanner() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="mailto:aquavibe2023@gmail.com"
+                href="mailto:sultanfleetserve@gmail.com"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-secondary hover:bg-secondary/90 text-white font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-secondary/40 group"
               >
                 Request a Quote
@@ -123,7 +123,7 @@ export default function CTABanner() {
                 </div>
                 <div>
                   <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-1">Email</div>
-                  <a href="mailto:aquavibe2023@gmail.com" className="text-white/80 text-sm hover:text-secondary transition-colors">
+                  <a href="mailto:sultanfleetserve@gmail.com" className="text-white/80 text-sm hover:text-secondary transition-colors">
                    sultanfleetserve@gmail.com
                   </a>
                 </div>

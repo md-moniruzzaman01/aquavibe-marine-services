@@ -47,8 +47,8 @@ export default function HomePage() {
       "Ship Manning and Management",
     ],
     sameAs: [
-      "https://www.instagram.com/aquavibe2023/",
-      "https://bd.linkedin.com/company/aquavibe-marine-services",
+      "https://www.instagram.com/",
+      "https://bd.linkedin.com/company/",
     ],
   };
 

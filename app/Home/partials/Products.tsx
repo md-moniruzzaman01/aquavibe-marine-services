@@ -199,7 +199,7 @@ export default function Products() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:aquavibe2023@gmail.com"
+                href="mailto:sultanfleetserve@gmail.com"
                 className="px-8 py-4 bg-[#e4a04f] hover:bg-white text-[#08214a] font-black text-sm tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg"
               >
                 Inquire Now

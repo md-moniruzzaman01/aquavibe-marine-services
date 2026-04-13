@@ -2,7 +2,8 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Phone, Mail, MapPin, MessageCircle, Send, Clock, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Send, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { sendContactEmail } from "@/app/actions/emailActions";
 
 const CONTACT_CARDS = [
   {
@@ -25,7 +26,7 @@ const CONTACT_CARDS = [
     icon: MessageCircle,
     title: "WhatsApp",
     desc: "Quick messaging support",
-    action: "https://wa.me/+8801624434052",
+    action: "https://wa.me/8801624434052",
     label: "+880 1624 434052",
     color: "from-green-500 to-green-600",
   },
@@ -41,18 +42,26 @@ export default function ContactSection() {
   });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
+    setError(null);
+
+    const result = await sendContactEmail(form);
+
+    if (result.success) {
       setSent(true);
       setForm({ name: "", email: "", phone: "", port: "", message: "" });
-      setTimeout(() => setSent(false), 4000);
-    }, 1500);
+      setTimeout(() => setSent(false), 5000);
+    } else {
+      setError(result.error || "Something went wrong. Please try again later.");
+    }
+    
+    setSending(false);
   };
 
   return (
@@ -181,6 +190,17 @@ export default function ContactSection() {
                   <div className="font-mono text-[9px] text-black/20 mt-1 text-right">{form.message.length} / 300</div>
                 </div>
 
+                {error && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    className="flex items-center gap-2 p-3 rounded-xl bg-red-50 text-red-600 text-[11px] font-semibold border border-red-100"
+                  >
+                    <AlertCircle className="w-4 h-4" />
+                    {error}
+                  </motion.div>
+                )}
+
                 <button
                   type="submit"
                   disabled={sending || sent}
@@ -230,7 +250,7 @@ export default function ContactSection() {
               <div className="space-y-2.5">
                 {[
                   { label: "Phone 1", value: "+880 1624 434052" },
-                  { label: "Phone 2", value: "+880 1974 434052" },
+                  { label: "Phone 2", value: "+880 1622 221919" },
                   { label: "Email 1", value: "sultanfleetserve@gmail.com" },
                   { label: "Email 2", value: "smturzo@gmail.com" },
                   { label: "WhatsApp", value: "+880 1624 434052" },

@@ -8,7 +8,7 @@ const SLIDES = [
   {
     image: "/banner1.jpg",
     subtitle: "WELCOME TO",
-    title: "SULTAN FLEET\nSERVICES",
+    title: "SULTAN FLEET\nSERVICE",
     desc: "A leading ship chandler in Bangladesh, delivering reliable marine supplies and services across Chittagong, Mongla, and Payra ports.",
     badge: "TRUSTED SINCE 2020",
   },
@@ -85,7 +85,7 @@ export default function HeroCarousel() {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex md:items-center">
+      <div className="relative z-10 h-full flex items-start ">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
           <AnimatePresence mode="wait">
             <motion.div

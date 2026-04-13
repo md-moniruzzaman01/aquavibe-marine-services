@@ -15,46 +15,81 @@ import {
 const PRODUCTS = [
   {
     icon: Anchor,
-    title: "Marine Yokohama Fenders",
-    desc: "Specialized high-pressure Yokohama Fenders designed for maximum energy absorption. Ideal for ship-to-ship and ship-to-dock operations in all weather conditions.",
+    title: "Yokohama Fender",
+    desc: "High-performance Yokohama fenders designed for safe ship-to-ship and ship-to-berth operations with excellent energy absorption and durability.",
     tag: "SPECIALIZATION",
-    features: ["Pneumatic Rubber", "High Durability", "ISO 17357 Certified"]
+    features: ["Pneumatic Rubber", "High Durability", "ISO Standard"]
   },
   {
     icon: Box,
-    title: "Ship Equipment Supply",
-    desc: "Comprehensive deck and engine room equipment. From mooring ropes and safety gear to specialized navigation tools and cabin stores.",
-    tag: "FLEET SUPPORT",
-    features: ["Deck & Engine", "Safety Gear", "Navigation Tools"]
+    title: "Remote Control Grab (10/12 CBM)",
+    desc: "Heavy-duty remote control grabs available in 10 CBM and 12 CBM capacities for efficient bulk cargo handling with reduced manpower.",
+    tag: "CARGO HANDLING",
+    features: ["10/12 CBM", "Remote Operation", "High Efficiency"]
   },
   {
     icon: Wrench,
-    title: "Marine Spare Parts",
-    desc: "Genuine OEM and high-quality alternative spare parts for main engines, pumps, and auxiliary machinery. Fast delivery to all Bangladesh ports.",
-    tag: "TECHNICAL",
-    features: ["OEM Quality", "Engine Spares", "Express Delivery"]
-  },
-  {
-    icon: ShieldCheck,
-    title: "Fender Accessories",
-    desc: "Heavy-duty chains, shackles, and mounting hardware specifically designed to support Yokohama fender installations.",
-    tag: "ACCESSORIES",
-    features: ["Load Testing", "Galvanized Steel", "Quick Install"]
-  },
-  {
-    icon: Layers,
-    title: "Hull Protection Gear",
-    desc: "Advanced rubber fendering and foam-filled protection systems to prevent vessel damage during berthing and cargo handling.",
-    tag: "PROTECTION",
-    features: ["Foam Filled", "Non-Marking", "Custom Sizes"]
+    title: "Manual Grab (Bangla)",
+    desc: "Cost-effective manual grab buckets widely used in local port operations for reliable and simple bulk material handling.",
+    tag: "CARGO HANDLING",
+    features: ["Manual Operation", "Durable Build", "Easy Maintenance"]
   },
   {
     icon: Settings,
-    title: "Structural Components",
-    desc: "Provision of critical marine structural parts, piping materials, and specialized shipboarding equipment.",
-    tag: "HARDWARE",
-    features: ["Marine Grade", "Corrosion Resistant", "Class Approved"]
+    title: "Marine Spare Parts",
+    desc: "Wide range of high-quality marine spare parts ensuring smooth vessel operation with fast sourcing and delivery.",
+    tag: "TECHNICAL",
+    features: ["OEM Quality", "All Machinery", "Fast Delivery"]
   },
+  {
+    icon: Layers,
+    title: "Excavator Supply",
+    desc: "Robust excavators suitable for port and heavy-duty marine operations, delivering strong performance and reliability.",
+    tag: "HEAVY EQUIPMENT",
+    features: ["High Performance", "Durable", "Port Use"]
+  },
+  {
+    icon: ShieldCheck,
+    title: "Peludar Supply",
+    desc: "Efficient peludar equipment designed for bulk cargo unloading with consistent and reliable performance.",
+    tag: "CARGO HANDLING",
+    features: ["Bulk Handling", "Reliable", "Heavy Duty"]
+  },
+  {
+    icon: Anchor,
+    title: "Shore Crane",
+    desc: "Heavy-duty shore cranes built for safe and efficient cargo lifting operations at ports with high load capacity.",
+    tag: "PORT EQUIPMENT",
+    features: ["High Capacity", "Stable", "Long Service Life"]
+  },
+  {
+    icon: ShieldCheck,
+    title: "Bolt Seal",
+    desc: "High-security bolt seals designed for cargo container protection with tamper-evident locking system.",
+    tag: "SECURITY",
+    features: ["Tamper Proof", "High Security", "ISO Compliant"]
+  },
+  {
+    icon: Box,
+    title: "12 Inch Wire Seal",
+    desc: "Durable 12-inch wire seals for secure cargo and container locking with strong resistance against tampering.",
+    tag: "SECURITY",
+    features: ["12 Inch", "Flexible", "Strong Lock"]
+  },
+  {
+    icon: Box,
+    title: "32 Inch Wire Seal",
+    desc: "Flexible 32-inch wire seals ideal for various cargo securing applications ensuring reliable protection.",
+    tag: "SECURITY",
+    features: ["32 Inch", "Durable", "Easy Use"]
+  },
+  {
+    icon: Box,
+    title: "62 Inch Wire Seal",
+    desc: "Extra-long 62-inch wire seals suitable for large or specialized cargo securing needs with dependable strength.",
+    tag: "SECURITY",
+    features: ["62 Inch", "Heavy Duty", "Reliable"]
+  }
 ];
 
 export default function Products() {

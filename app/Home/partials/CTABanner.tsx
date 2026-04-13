@@ -81,7 +81,7 @@ export default function CTABanner() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="https://wa.me/+8801728841299"
+                href="https://wa.me/+8801624434052"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-secondary text-white hover:text-secondary font-bold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 backdrop-blur-sm"
@@ -112,19 +112,19 @@ export default function CTABanner() {
                 <div>
                   <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-1">Emergency Hotline</div>
                   <a href="tel:+8801728841299" className="text-white font-black text-2xl hover:text-secondary transition-colors">
-                    +880 1728 841299
+                    +880 1624 434052
                   </a>
                 </div>
                 <div>
                   <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-1">Secondary Line</div>
                   <a href="tel:+8801521387459" className="text-white font-bold text-lg hover:text-secondary transition-colors">
-                    +880 1521 387459
+                    +880 1622 221919
                   </a>
                 </div>
                 <div>
                   <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-1">Email</div>
                   <a href="mailto:aquavibe2023@gmail.com" className="text-white/80 text-sm hover:text-secondary transition-colors">
-                    aquavibe2023@gmail.com
+                   sultanfleetserve@gmail.com
                   </a>
                 </div>
 

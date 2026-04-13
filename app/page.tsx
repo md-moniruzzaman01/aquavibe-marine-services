@@ -15,7 +15,7 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Sultan Fleet Serves",
+    name: "Sultan Fleet Serve",
     description:
       "Leading ship chandler in Bangladesh supplying marine spare parts, lube oil, bunker, provisions, ship stores and repair services.",
     url: "https://sultanfleetserve.com",

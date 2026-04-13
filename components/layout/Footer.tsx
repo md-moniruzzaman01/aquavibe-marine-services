@@ -165,23 +165,23 @@ export default function Footer() {
             <Image
               src="/sultan tour and travels .jpg"
               alt="Sultan Tour and Travels"
-              width={160}
-              height={80}
-              className="h-16 w-auto object-contain hover:scale-105 transition-transform"
+              width={200}
+              height={150}
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain hover:scale-105 transition-transform"
             />
             <Image
               src="/logo seaking.jpg"
               alt="Sea King"
-              width={160}
-              height={80}
-              className="h-16 w-auto object-contain hover:scale-105 transition-transform"
+               width={200}
+              height={150}
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain hover:scale-105 transition-transform"
             />
             <Image
               src="/logo taqwa.jpg"
               alt="Taqwa"
-              width={160}
-              height={80}
-              className="h-16 w-auto object-contain hover:scale-105 transition-transform"
+                width={200}
+              height={150}
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain hover:scale-105 transition-transform"
             />
           </div>
         </div>

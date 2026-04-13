@@ -66,9 +66,9 @@ export default function Header() {
             <Image
               src="/logo sfs.jpg"
               alt="logo"
-              width={287}
-              height={80}
-              className="h-16 w-auto"
+              width={300}
+              height={150}
+              className="h-20 w-auto"
             />
           </Link>
           <div className="hidden lg:block">

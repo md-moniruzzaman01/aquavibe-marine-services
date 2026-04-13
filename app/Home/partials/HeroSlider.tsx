@@ -8,7 +8,7 @@ const SLIDES = [
   {
     image: "/banner1.jpg",
     subtitle: "WELCOME TO",
-    title: "SULTAN FLEET\nSERVICE",
+    title: "SULTAN FLEET\SERVE",
     desc: "A leading ship chandler in Bangladesh, delivering reliable marine supplies and services across Chittagong, Mongla, and Payra ports.",
     badge: "TRUSTED SINCE 2020",
   },
